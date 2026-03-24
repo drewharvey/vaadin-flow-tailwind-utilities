@@ -91,6 +91,60 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // Accessibility
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for hiding content from or exposing it to screen readers.
+     */
+    public static final class Accessibility {
+
+        /** Hides content visually while keeping it accessible to screen readers. */
+        public static final String SCREEN_READER_ONLY = "sr-only";
+        /** Undoes {@link #SCREEN_READER_ONLY} to make the element visible to all users. */
+        public static final String NOT_SCREEN_READER_ONLY = "not-sr-only";
+
+        private Accessibility() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Animation
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for animating elements with CSS animations.
+     */
+    public static final class Animation {
+
+        public static final String NONE = "animate-none";
+        public static final String SPIN = "animate-spin";
+        public static final String PING = "animate-ping";
+        public static final String PULSE = "animate-pulse";
+        public static final String BOUNCE = "animate-bounce";
+
+        private Animation() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Appearance
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for suppressing the native form-element styling.
+     */
+    public static final class Appearance {
+
+        public static final String NONE = "appearance-none";
+        public static final String AUTO = "appearance-auto";
+
+        private Appearance() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // AspectRatio    // -----------------------------------------------------------------------
     // AspectRatio
     // -----------------------------------------------------------------------
 
@@ -506,6 +560,202 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // BackdropFilter
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for applying backdrop-filter effects to an element.
+     */
+    public static final class BackdropFilter {
+
+        public static final String NONE = "backdrop-blur-none";
+        public static final String BLUR_SMALL = "backdrop-blur-sm";
+        public static final String BLUR = "backdrop-blur";
+        public static final String BLUR_MEDIUM = "backdrop-blur-md";
+        public static final String BLUR_LARGE = "backdrop-blur-lg";
+        public static final String BLUR_XLARGE = "backdrop-blur-xl";
+        public static final String BLUR_XXLARGE = "backdrop-blur-2xl";
+        public static final String BLUR_XXXLARGE = "backdrop-blur-3xl";
+
+        private BackdropFilter() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundAttachment
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a background image behaves when scrolling.
+     */
+    public static final class BackgroundAttachment {
+
+        public static final String FIXED = "bg-fixed";
+        public static final String LOCAL = "bg-local";
+        public static final String SCROLL = "bg-scroll";
+
+        private BackgroundAttachment() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundBlendMode
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an element's background blends with its
+     * background color.
+     */
+    public static final class BackgroundBlendMode {
+
+        public static final String NORMAL = "bg-blend-normal";
+        public static final String MULTIPLY = "bg-blend-multiply";
+        public static final String SCREEN = "bg-blend-screen";
+        public static final String OVERLAY = "bg-blend-overlay";
+        public static final String DARKEN = "bg-blend-darken";
+        public static final String LIGHTEN = "bg-blend-lighten";
+        public static final String COLOR_DODGE = "bg-blend-color-dodge";
+        public static final String COLOR_BURN = "bg-blend-color-burn";
+        public static final String HARD_LIGHT = "bg-blend-hard-light";
+        public static final String SOFT_LIGHT = "bg-blend-soft-light";
+        public static final String DIFFERENCE = "bg-blend-difference";
+        public static final String EXCLUSION = "bg-blend-exclusion";
+        public static final String HUE = "bg-blend-hue";
+        public static final String SATURATION = "bg-blend-saturation";
+        public static final String COLOR = "bg-blend-color";
+        public static final String LUMINOSITY = "bg-blend-luminosity";
+
+        private BackgroundBlendMode() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundClip
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the bounding box of an element's background.
+     */
+    public static final class BackgroundClip {
+
+        public static final String BORDER = "bg-clip-border";
+        public static final String PADDING = "bg-clip-padding";
+        public static final String CONTENT = "bg-clip-content";
+        public static final String TEXT = "bg-clip-text";
+
+        private BackgroundClip() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundImage
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for setting a background gradient direction.
+     *
+     * <p>
+     * Use gradient color stop classes ({@code from-*}, {@code via-*},
+     * {@code to-*}) with the same Tailwind color palette naming to set colors.
+     * For example: {@code from-blue-500}, {@code to-purple-600}.
+     */
+    public static final class BackgroundImage {
+
+        public static final String NONE = "bg-none";
+        public static final String GRADIENT_TO_TOP = "bg-gradient-to-t";
+        public static final String GRADIENT_TO_TOP_RIGHT = "bg-gradient-to-tr";
+        public static final String GRADIENT_TO_RIGHT = "bg-gradient-to-r";
+        public static final String GRADIENT_TO_BOTTOM_RIGHT = "bg-gradient-to-br";
+        public static final String GRADIENT_TO_BOTTOM = "bg-gradient-to-b";
+        public static final String GRADIENT_TO_BOTTOM_LEFT = "bg-gradient-to-bl";
+        public static final String GRADIENT_TO_LEFT = "bg-gradient-to-l";
+        public static final String GRADIENT_TO_TOP_LEFT = "bg-gradient-to-tl";
+
+        private BackgroundImage() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundOrigin
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an element's background is positioned
+     * relative to its borders, padding, or content.
+     */
+    public static final class BackgroundOrigin {
+
+        public static final String BORDER = "bg-origin-border";
+        public static final String PADDING = "bg-origin-padding";
+        public static final String CONTENT = "bg-origin-content";
+
+        private BackgroundOrigin() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundPosition
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the position of an element's background image.
+     */
+    public static final class BackgroundPosition {
+
+        public static final String BOTTOM = "bg-bottom";
+        public static final String CENTER = "bg-center";
+        public static final String LEFT = "bg-left";
+        public static final String LEFT_BOTTOM = "bg-left-bottom";
+        public static final String LEFT_TOP = "bg-left-top";
+        public static final String RIGHT = "bg-right";
+        public static final String RIGHT_BOTTOM = "bg-right-bottom";
+        public static final String RIGHT_TOP = "bg-right-top";
+        public static final String TOP = "bg-top";
+
+        private BackgroundPosition() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundRepeat
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the repetition of an element's background image.
+     */
+    public static final class BackgroundRepeat {
+
+        public static final String REPEAT = "bg-repeat";
+        public static final String NO_REPEAT = "bg-no-repeat";
+        public static final String REPEAT_X = "bg-repeat-x";
+        public static final String REPEAT_Y = "bg-repeat-y";
+        public static final String REPEAT_ROUND = "bg-repeat-round";
+        public static final String REPEAT_SPACE = "bg-repeat-space";
+
+        private BackgroundRepeat() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BackgroundSize
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the background size of an element's background
+     * image.
+     */
+    public static final class BackgroundSize {
+
+        public static final String AUTO = "bg-auto";
+        public static final String COVER = "bg-cover";
+        public static final String CONTAIN = "bg-contain";
+
+        private BackgroundSize() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Border    // -----------------------------------------------------------------------
     // Border
     // -----------------------------------------------------------------------
 
@@ -725,6 +975,61 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // BorderCollapse
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling whether table borders should collapse or be
+     * separated.
+     */
+    public static final class BorderCollapse {
+
+        public static final String COLLAPSE = "border-collapse";
+        public static final String SEPARATE = "border-separate";
+
+        private BorderCollapse() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BorderStyle
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the style of an element's borders.
+     */
+    public static final class BorderStyle {
+
+        public static final String SOLID = "border-solid";
+        public static final String DASHED = "border-dashed";
+        public static final String DOTTED = "border-dotted";
+        public static final String DOUBLE = "border-double";
+        public static final String HIDDEN = "border-hidden";
+        public static final String NONE = "border-none";
+
+        private BorderStyle() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BoxDecorationBreak
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how element fragments render across multiple
+     * lines, columns, or pages.
+     */
+    public static final class BoxDecorationBreak {
+
+        public static final String CLONE = "box-decoration-clone";
+        public static final String SLICE = "box-decoration-slice";
+
+        private BoxDecorationBreak() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BoxShadow    // -----------------------------------------------------------------------
     // BoxShadow
     // -----------------------------------------------------------------------
 
@@ -764,6 +1069,199 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // BreakAfter
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a column or page break should behave
+     * after an element.
+     */
+    public static final class BreakAfter {
+
+        public static final String AUTO = "break-after-auto";
+        public static final String AVOID = "break-after-avoid";
+        public static final String ALL = "break-after-all";
+        public static final String AVOID_PAGE = "break-after-avoid-page";
+        public static final String PAGE = "break-after-page";
+        public static final String LEFT = "break-after-left";
+        public static final String RIGHT = "break-after-right";
+        public static final String COLUMN = "break-after-column";
+
+        private BreakAfter() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BreakBefore
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a column or page break should behave
+     * before an element.
+     */
+    public static final class BreakBefore {
+
+        public static final String AUTO = "break-before-auto";
+        public static final String AVOID = "break-before-avoid";
+        public static final String ALL = "break-before-all";
+        public static final String AVOID_PAGE = "break-before-avoid-page";
+        public static final String PAGE = "break-before-page";
+        public static final String LEFT = "break-before-left";
+        public static final String RIGHT = "break-before-right";
+        public static final String COLUMN = "break-before-column";
+
+        private BreakBefore() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // BreakInside
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a column or page break should behave
+     * inside an element.
+     */
+    public static final class BreakInside {
+
+        public static final String AUTO = "break-inside-auto";
+        public static final String AVOID = "break-inside-avoid";
+        public static final String AVOID_PAGE = "break-inside-avoid-page";
+        public static final String AVOID_COLUMN = "break-inside-avoid-column";
+
+        private BreakInside() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // CaptionSide
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the alignment of a caption element inside a
+     * table.
+     */
+    public static final class CaptionSide {
+
+        public static final String TOP = "caption-top";
+        public static final String BOTTOM = "caption-bottom";
+
+        private CaptionSide() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Clear
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the wrapping of content around an element.
+     */
+    public static final class Clear {
+
+        public static final String LEFT = "clear-left";
+        public static final String RIGHT = "clear-right";
+        public static final String BOTH = "clear-both";
+        public static final String NONE = "clear-none";
+        public static final String START = "clear-start";
+        public static final String END = "clear-end";
+
+        private Clear() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Columns
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the number of columns within an element.
+     */
+    public static final class Columns {
+
+        public static final String AUTO = "columns-auto";
+        public static final String _1 = "columns-1";
+        public static final String _2 = "columns-2";
+        public static final String _3 = "columns-3";
+        public static final String _4 = "columns-4";
+        public static final String _5 = "columns-5";
+        public static final String _6 = "columns-6";
+        public static final String _7 = "columns-7";
+        public static final String _8 = "columns-8";
+        public static final String _9 = "columns-9";
+        public static final String _10 = "columns-10";
+        public static final String _11 = "columns-11";
+        public static final String _12 = "columns-12";
+        public static final String XSMALL_3 = "columns-3xs";
+        public static final String XSMALL_2 = "columns-2xs";
+        public static final String XSMALL = "columns-xs";
+        public static final String SMALL = "columns-sm";
+        public static final String MEDIUM = "columns-md";
+        public static final String LARGE = "columns-lg";
+        public static final String XLARGE = "columns-xl";
+        public static final String XXLARGE = "columns-2xl";
+        public static final String XXXLARGE = "columns-3xl";
+        public static final String XXXXLARGE = "columns-4xl";
+        public static final String XXXXXLARGE = "columns-5xl";
+        public static final String XXXXXXLARGE = "columns-6xl";
+        public static final String XXXXXXXLARGE = "columns-7xl";
+
+        private Columns() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Cursor
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the cursor style when hovering over an element.
+     */
+    public static final class Cursor {
+
+        public static final String AUTO = "cursor-auto";
+        public static final String DEFAULT = "cursor-default";
+        public static final String POINTER = "cursor-pointer";
+        public static final String WAIT = "cursor-wait";
+        public static final String TEXT = "cursor-text";
+        public static final String MOVE = "cursor-move";
+        public static final String HELP = "cursor-help";
+        public static final String NOT_ALLOWED = "cursor-not-allowed";
+        public static final String NONE = "cursor-none";
+        public static final String CONTEXT_MENU = "cursor-context-menu";
+        public static final String PROGRESS = "cursor-progress";
+        public static final String CELL = "cursor-cell";
+        public static final String CROSSHAIR = "cursor-crosshair";
+        public static final String VERTICAL_TEXT = "cursor-vertical-text";
+        public static final String ALIAS = "cursor-alias";
+        public static final String COPY = "cursor-copy";
+        public static final String NO_DROP = "cursor-no-drop";
+        public static final String GRAB = "cursor-grab";
+        public static final String GRABBING = "cursor-grabbing";
+        public static final String ALL_SCROLL = "cursor-all-scroll";
+        public static final String COL_RESIZE = "cursor-col-resize";
+        public static final String ROW_RESIZE = "cursor-row-resize";
+        public static final String N_RESIZE = "cursor-n-resize";
+        public static final String E_RESIZE = "cursor-e-resize";
+        public static final String S_RESIZE = "cursor-s-resize";
+        public static final String W_RESIZE = "cursor-w-resize";
+        public static final String NE_RESIZE = "cursor-ne-resize";
+        public static final String NW_RESIZE = "cursor-nw-resize";
+        public static final String SE_RESIZE = "cursor-se-resize";
+        public static final String SW_RESIZE = "cursor-sw-resize";
+        public static final String EW_RESIZE = "cursor-ew-resize";
+        public static final String NS_RESIZE = "cursor-ns-resize";
+        public static final String NESW_RESIZE = "cursor-nesw-resize";
+        public static final String NWSE_RESIZE = "cursor-nwse-resize";
+        public static final String ZOOM_IN = "cursor-zoom-in";
+        public static final String ZOOM_OUT = "cursor-zoom-out";
+
+        private Cursor() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Display    // -----------------------------------------------------------------------
     // Display
     // -----------------------------------------------------------------------
 
@@ -857,6 +1355,244 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // Filter
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for applying CSS filter effects to an element.
+     */
+    public static final class Filter {
+
+        private Filter() {
+        }
+
+        /** Blur filter classes ({@code blur-*}). */
+        public static final class Blur {
+            public static final String NONE = "blur-none";
+            public static final String SMALL = "blur-sm";
+            public static final String DEFAULT = "blur";
+            public static final String MEDIUM = "blur-md";
+            public static final String LARGE = "blur-lg";
+            public static final String XLARGE = "blur-xl";
+            public static final String XXLARGE = "blur-2xl";
+            public static final String XXXLARGE = "blur-3xl";
+
+            private Blur() {
+            }
+        }
+
+        /** Brightness filter classes ({@code brightness-*}). */
+        public static final class Brightness {
+            public static final String _0 = "brightness-0";
+            public static final String _50 = "brightness-50";
+            public static final String _75 = "brightness-75";
+            public static final String _90 = "brightness-90";
+            public static final String _95 = "brightness-95";
+            public static final String _100 = "brightness-100";
+            public static final String _105 = "brightness-105";
+            public static final String _110 = "brightness-110";
+            public static final String _125 = "brightness-125";
+            public static final String _150 = "brightness-150";
+            public static final String _200 = "brightness-200";
+
+            private Brightness() {
+            }
+        }
+
+        /** Contrast filter classes ({@code contrast-*}). */
+        public static final class Contrast {
+            public static final String _0 = "contrast-0";
+            public static final String _50 = "contrast-50";
+            public static final String _75 = "contrast-75";
+            public static final String _100 = "contrast-100";
+            public static final String _125 = "contrast-125";
+            public static final String _150 = "contrast-150";
+            public static final String _200 = "contrast-200";
+
+            private Contrast() {
+            }
+        }
+
+        /** Grayscale filter classes ({@code grayscale-*}). */
+        public static final class Grayscale {
+            public static final String NONE = "grayscale-0";
+            public static final String FULL = "grayscale";
+
+            private Grayscale() {
+            }
+        }
+
+        /** Hue-rotate filter classes ({@code hue-rotate-*}). */
+        public static final class HueRotate {
+            public static final String _0 = "hue-rotate-0";
+            public static final String _15 = "hue-rotate-15";
+            public static final String _30 = "hue-rotate-30";
+            public static final String _60 = "hue-rotate-60";
+            public static final String _90 = "hue-rotate-90";
+            public static final String _180 = "hue-rotate-180";
+
+            private HueRotate() {
+            }
+        }
+
+        /** Invert filter classes ({@code invert-*}). */
+        public static final class Invert {
+            public static final String NONE = "invert-0";
+            public static final String FULL = "invert";
+
+            private Invert() {
+            }
+        }
+
+        /** Saturate filter classes ({@code saturate-*}). */
+        public static final class Saturate {
+            public static final String _0 = "saturate-0";
+            public static final String _50 = "saturate-50";
+            public static final String _100 = "saturate-100";
+            public static final String _150 = "saturate-150";
+            public static final String _200 = "saturate-200";
+
+            private Saturate() {
+            }
+        }
+
+        /** Sepia filter classes ({@code sepia-*}). */
+        public static final class Sepia {
+            public static final String NONE = "sepia-0";
+            public static final String FULL = "sepia";
+
+            private Sepia() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Flex
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how flex items both grow and shrink
+     * ({@code flex} shorthand).
+     */
+    public static final class Flex {
+
+        public static final String _1 = "flex-1";
+        public static final String AUTO = "flex-auto";
+        public static final String INITIAL = "flex-initial";
+        public static final String NONE = "flex-none";
+
+        private Flex() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // FlexBasis
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the initial size of flex items ({@code basis-*}).
+     */
+    public static final class FlexBasis {
+
+        public static final String AUTO = "basis-auto";
+        public static final String FULL = "basis-full";
+        public static final String NONE = "basis-0";
+        public static final String XSMALL = "basis-1";
+        public static final String SMALL = "basis-2";
+        public static final String MEDIUM = "basis-4";
+        public static final String LARGE = "basis-6";
+        public static final String XLARGE = "basis-8";
+        public static final String XXLARGE = "basis-12";
+        public static final String XXXLARGE = "basis-16";
+        public static final String XXXXLARGE = "basis-24";
+        public static final String XXXXXLARGE = "basis-32";
+        public static final String HALF = "basis-1/2";
+        public static final String ONE_THIRD = "basis-1/3";
+        public static final String TWO_THIRDS = "basis-2/3";
+        public static final String ONE_QUARTER = "basis-1/4";
+        public static final String THREE_QUARTERS = "basis-3/4";
+
+        private FlexBasis() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Float
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the wrapping of content around an element.
+     */
+    public static final class Float {
+
+        public static final String LEFT = "float-left";
+        public static final String RIGHT = "float-right";
+        public static final String NONE = "float-none";
+        public static final String START = "float-start";
+        public static final String END = "float-end";
+
+        private Float() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // FontFamily
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the font family of an element.
+     */
+    public static final class FontFamily {
+
+        public static final String SANS = "font-sans";
+        public static final String SERIF = "font-serif";
+        public static final String MONO = "font-mono";
+
+        private FontFamily() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // FontSmoothing
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the font-smoothing of an element.
+     */
+    public static final class FontSmoothing {
+
+        public static final String ANTIALIASED = "antialiased";
+        public static final String SUBPIXEL_ANTIALIASED = "subpixel-antialiased";
+
+        private FontSmoothing() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // FontVariantNumeric
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the variant of numbers in an element.
+     */
+    public static final class FontVariantNumeric {
+
+        public static final String NORMAL = "normal-nums";
+        public static final String ORDINAL = "ordinal";
+        public static final String SLASHED_ZERO = "slashed-zero";
+        public static final String LINING_NUMS = "lining-nums";
+        public static final String OLDSTYLE_NUMS = "oldstyle-nums";
+        public static final String PROPORTIONAL_NUMS = "proportional-nums";
+        public static final String TABULAR_NUMS = "tabular-nums";
+        public static final String DIAGONAL_FRACTIONS = "diagonal-fractions";
+        public static final String STACKED_FRACTIONS = "stacked-fractions";
+
+        private FontVariantNumeric() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // FontSize    // -----------------------------------------------------------------------
     // FontSize
     // -----------------------------------------------------------------------
 
@@ -983,6 +1719,186 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // Grid
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for specifying columns, rows, and flow in a grid layout.
+     */
+    public static final class Grid {
+
+        private Grid() {
+        }
+
+        /** Grid template column classes ({@code grid-cols-*}). */
+        public static final class TemplateColumns {
+            public static final String NONE = "grid-cols-none";
+            public static final String SUBGRID = "grid-cols-subgrid";
+            public static final String _1 = "grid-cols-1";
+            public static final String _2 = "grid-cols-2";
+            public static final String _3 = "grid-cols-3";
+            public static final String _4 = "grid-cols-4";
+            public static final String _5 = "grid-cols-5";
+            public static final String _6 = "grid-cols-6";
+            public static final String _7 = "grid-cols-7";
+            public static final String _8 = "grid-cols-8";
+            public static final String _9 = "grid-cols-9";
+            public static final String _10 = "grid-cols-10";
+            public static final String _11 = "grid-cols-11";
+            public static final String _12 = "grid-cols-12";
+
+            private TemplateColumns() {
+            }
+        }
+
+        /** Grid template row classes ({@code grid-rows-*}). */
+        public static final class TemplateRows {
+            public static final String NONE = "grid-rows-none";
+            public static final String SUBGRID = "grid-rows-subgrid";
+            public static final String _1 = "grid-rows-1";
+            public static final String _2 = "grid-rows-2";
+            public static final String _3 = "grid-rows-3";
+            public static final String _4 = "grid-rows-4";
+            public static final String _5 = "grid-rows-5";
+            public static final String _6 = "grid-rows-6";
+
+            private TemplateRows() {
+            }
+        }
+
+        /** Grid auto-flow classes ({@code grid-flow-*}). */
+        public static final class AutoFlow {
+            public static final String ROW = "grid-flow-row";
+            public static final String COLUMN = "grid-flow-col";
+            public static final String DENSE = "grid-flow-dense";
+            public static final String ROW_DENSE = "grid-flow-row-dense";
+            public static final String COLUMN_DENSE = "grid-flow-col-dense";
+
+            private AutoFlow() {
+            }
+        }
+
+        /** Grid auto-columns classes ({@code auto-cols-*}). */
+        public static final class AutoColumns {
+            public static final String AUTO = "auto-cols-auto";
+            public static final String MIN = "auto-cols-min";
+            public static final String MAX = "auto-cols-max";
+            public static final String FR = "auto-cols-fr";
+
+            private AutoColumns() {
+            }
+        }
+
+        /** Grid auto-rows classes ({@code auto-rows-*}). */
+        public static final class AutoRows {
+            public static final String AUTO = "auto-rows-auto";
+            public static final String MIN = "auto-rows-min";
+            public static final String MAX = "auto-rows-max";
+            public static final String FR = "auto-rows-fr";
+
+            private AutoRows() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // GridColumn
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how elements are sized and placed across
+     * grid columns ({@code col-*}).
+     */
+    public static final class GridColumn {
+
+        public static final String AUTO = "col-auto";
+        public static final String SPAN_FULL = "col-span-full";
+        public static final String SPAN_1 = "col-span-1";
+        public static final String SPAN_2 = "col-span-2";
+        public static final String SPAN_3 = "col-span-3";
+        public static final String SPAN_4 = "col-span-4";
+        public static final String SPAN_5 = "col-span-5";
+        public static final String SPAN_6 = "col-span-6";
+        public static final String SPAN_7 = "col-span-7";
+        public static final String SPAN_8 = "col-span-8";
+        public static final String SPAN_9 = "col-span-9";
+        public static final String SPAN_10 = "col-span-10";
+        public static final String SPAN_11 = "col-span-11";
+        public static final String SPAN_12 = "col-span-12";
+        public static final String START_AUTO = "col-start-auto";
+        public static final String START_1 = "col-start-1";
+        public static final String START_2 = "col-start-2";
+        public static final String START_3 = "col-start-3";
+        public static final String START_4 = "col-start-4";
+        public static final String START_5 = "col-start-5";
+        public static final String START_6 = "col-start-6";
+        public static final String START_7 = "col-start-7";
+        public static final String START_8 = "col-start-8";
+        public static final String START_9 = "col-start-9";
+        public static final String START_10 = "col-start-10";
+        public static final String START_11 = "col-start-11";
+        public static final String START_12 = "col-start-12";
+        public static final String START_13 = "col-start-13";
+        public static final String END_AUTO = "col-end-auto";
+        public static final String END_1 = "col-end-1";
+        public static final String END_2 = "col-end-2";
+        public static final String END_3 = "col-end-3";
+        public static final String END_4 = "col-end-4";
+        public static final String END_5 = "col-end-5";
+        public static final String END_6 = "col-end-6";
+        public static final String END_7 = "col-end-7";
+        public static final String END_8 = "col-end-8";
+        public static final String END_9 = "col-end-9";
+        public static final String END_10 = "col-end-10";
+        public static final String END_11 = "col-end-11";
+        public static final String END_12 = "col-end-12";
+        public static final String END_13 = "col-end-13";
+
+        private GridColumn() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // GridRow
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how elements are sized and placed across
+     * grid rows ({@code row-*}).
+     */
+    public static final class GridRow {
+
+        public static final String AUTO = "row-auto";
+        public static final String SPAN_FULL = "row-span-full";
+        public static final String SPAN_1 = "row-span-1";
+        public static final String SPAN_2 = "row-span-2";
+        public static final String SPAN_3 = "row-span-3";
+        public static final String SPAN_4 = "row-span-4";
+        public static final String SPAN_5 = "row-span-5";
+        public static final String SPAN_6 = "row-span-6";
+        public static final String START_AUTO = "row-start-auto";
+        public static final String START_1 = "row-start-1";
+        public static final String START_2 = "row-start-2";
+        public static final String START_3 = "row-start-3";
+        public static final String START_4 = "row-start-4";
+        public static final String START_5 = "row-start-5";
+        public static final String START_6 = "row-start-6";
+        public static final String START_7 = "row-start-7";
+        public static final String END_AUTO = "row-end-auto";
+        public static final String END_1 = "row-end-1";
+        public static final String END_2 = "row-end-2";
+        public static final String END_3 = "row-end-3";
+        public static final String END_4 = "row-end-4";
+        public static final String END_5 = "row-end-5";
+        public static final String END_6 = "row-end-6";
+        public static final String END_7 = "row-end-7";
+
+        private GridRow() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Height    // -----------------------------------------------------------------------
     // Height
     // -----------------------------------------------------------------------
 
@@ -1014,6 +1930,176 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // Hyphens
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how words should be hyphenated.
+     */
+    public static final class Hyphens {
+
+        public static final String NONE = "hyphens-none";
+        public static final String MANUAL = "hyphens-manual";
+        public static final String AUTO = "hyphens-auto";
+
+        private Hyphens() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Inset
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the placement of positioned elements
+     * ({@code top-*}, {@code right-*}, {@code bottom-*}, {@code left-*},
+     * {@code inset-*}).
+     */
+    public static final class Inset {
+
+        public static final String AUTO = "inset-auto";
+        public static final String FULL = "inset-full";
+        public static final String HALF = "inset-1/2";
+        public static final String NONE = "inset-0";
+        public static final String XSMALL = "inset-1";
+        public static final String SMALL = "inset-2";
+        public static final String MEDIUM = "inset-4";
+        public static final String LARGE = "inset-6";
+        public static final String XLARGE = "inset-8";
+        public static final String XXLARGE = "inset-12";
+        public static final String XXXLARGE = "inset-16";
+
+        private Inset() {
+        }
+
+        /** Horizontal (left + right) inset classes ({@code inset-x-*}). */
+        public static final class X {
+            public static final String AUTO = "inset-x-auto";
+            public static final String FULL = "inset-x-full";
+            public static final String HALF = "inset-x-1/2";
+            public static final String NONE = "inset-x-0";
+            public static final String XSMALL = "inset-x-1";
+            public static final String SMALL = "inset-x-2";
+            public static final String MEDIUM = "inset-x-4";
+            public static final String LARGE = "inset-x-6";
+            public static final String XLARGE = "inset-x-8";
+            public static final String XXLARGE = "inset-x-12";
+            public static final String XXXLARGE = "inset-x-16";
+
+            private X() {
+            }
+        }
+
+        /** Vertical (top + bottom) inset classes ({@code inset-y-*}). */
+        public static final class Y {
+            public static final String AUTO = "inset-y-auto";
+            public static final String FULL = "inset-y-full";
+            public static final String HALF = "inset-y-1/2";
+            public static final String NONE = "inset-y-0";
+            public static final String XSMALL = "inset-y-1";
+            public static final String SMALL = "inset-y-2";
+            public static final String MEDIUM = "inset-y-4";
+            public static final String LARGE = "inset-y-6";
+            public static final String XLARGE = "inset-y-8";
+            public static final String XXLARGE = "inset-y-12";
+            public static final String XXXLARGE = "inset-y-16";
+
+            private Y() {
+            }
+        }
+
+        /** Top inset classes ({@code top-*}). */
+        public static final class Top {
+            public static final String AUTO = "top-auto";
+            public static final String FULL = "top-full";
+            public static final String HALF = "top-1/2";
+            public static final String NONE = "top-0";
+            public static final String XSMALL = "top-1";
+            public static final String SMALL = "top-2";
+            public static final String MEDIUM = "top-4";
+            public static final String LARGE = "top-6";
+            public static final String XLARGE = "top-8";
+            public static final String XXLARGE = "top-12";
+            public static final String XXXLARGE = "top-16";
+
+            private Top() {
+            }
+        }
+
+        /** Right inset classes ({@code right-*}). */
+        public static final class Right {
+            public static final String AUTO = "right-auto";
+            public static final String FULL = "right-full";
+            public static final String HALF = "right-1/2";
+            public static final String NONE = "right-0";
+            public static final String XSMALL = "right-1";
+            public static final String SMALL = "right-2";
+            public static final String MEDIUM = "right-4";
+            public static final String LARGE = "right-6";
+            public static final String XLARGE = "right-8";
+            public static final String XXLARGE = "right-12";
+            public static final String XXXLARGE = "right-16";
+
+            private Right() {
+            }
+        }
+
+        /** Bottom inset classes ({@code bottom-*}). */
+        public static final class Bottom {
+            public static final String AUTO = "bottom-auto";
+            public static final String FULL = "bottom-full";
+            public static final String HALF = "bottom-1/2";
+            public static final String NONE = "bottom-0";
+            public static final String XSMALL = "bottom-1";
+            public static final String SMALL = "bottom-2";
+            public static final String MEDIUM = "bottom-4";
+            public static final String LARGE = "bottom-6";
+            public static final String XLARGE = "bottom-8";
+            public static final String XXLARGE = "bottom-12";
+            public static final String XXXLARGE = "bottom-16";
+
+            private Bottom() {
+            }
+        }
+
+        /** Left inset classes ({@code left-*}). */
+        public static final class Left {
+            public static final String AUTO = "left-auto";
+            public static final String FULL = "left-full";
+            public static final String HALF = "left-1/2";
+            public static final String NONE = "left-0";
+            public static final String XSMALL = "left-1";
+            public static final String SMALL = "left-2";
+            public static final String MEDIUM = "left-4";
+            public static final String LARGE = "left-6";
+            public static final String XLARGE = "left-8";
+            public static final String XXLARGE = "left-12";
+            public static final String XXXLARGE = "left-16";
+
+            private Left() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Isolation
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling whether an element should explicitly create a
+     * new stacking context.
+     */
+    public static final class Isolation {
+
+        public static final String ISOLATE = "isolate";
+        public static final String AUTO = "isolation-auto";
+
+        private Isolation() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // JustifyContent    // -----------------------------------------------------------------------
     // JustifyContent
     // -----------------------------------------------------------------------
 
@@ -1037,6 +2123,46 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // JustifyItems
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how grid items are aligned along their
+     * inline axis.
+     */
+    public static final class JustifyItems {
+
+        public static final String START = "justify-items-start";
+        public static final String END = "justify-items-end";
+        public static final String CENTER = "justify-items-center";
+        public static final String STRETCH = "justify-items-stretch";
+
+        private JustifyItems() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // JustifySelf
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an individual grid item is aligned along
+     * its inline axis.
+     */
+    public static final class JustifySelf {
+
+        public static final String AUTO = "justify-self-auto";
+        public static final String START = "justify-self-start";
+        public static final String END = "justify-self-end";
+        public static final String CENTER = "justify-self-center";
+        public static final String STRETCH = "justify-self-stretch";
+
+        private JustifySelf() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // LineHeight    // -----------------------------------------------------------------------
     // LineHeight
     // -----------------------------------------------------------------------
 
@@ -1057,6 +2183,81 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // LetterSpacing
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the tracking (letter spacing) of an element.
+     */
+    public static final class LetterSpacing {
+
+        public static final String TIGHTER = "tracking-tighter";
+        public static final String TIGHT = "tracking-tight";
+        public static final String NORMAL = "tracking-normal";
+        public static final String WIDE = "tracking-wide";
+        public static final String WIDER = "tracking-wider";
+        public static final String WIDEST = "tracking-widest";
+
+        private LetterSpacing() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // LineClamp
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for clamping text to a fixed number of lines.
+     */
+    public static final class LineClamp {
+
+        public static final String NONE = "line-clamp-none";
+        public static final String _1 = "line-clamp-1";
+        public static final String _2 = "line-clamp-2";
+        public static final String _3 = "line-clamp-3";
+        public static final String _4 = "line-clamp-4";
+        public static final String _5 = "line-clamp-5";
+        public static final String _6 = "line-clamp-6";
+
+        private LineClamp() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ListStylePosition
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the position of bullets/numbers in a list.
+     */
+    public static final class ListStylePosition {
+
+        public static final String INSIDE = "list-inside";
+        public static final String OUTSIDE = "list-outside";
+
+        private ListStylePosition() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ListStyleType
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the marker style of a list.
+     */
+    public static final class ListStyleType {
+
+        public static final String NONE = "list-none";
+        public static final String DISC = "list-disc";
+        public static final String DECIMAL = "list-decimal";
+
+        private ListStyleType() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Margin    // -----------------------------------------------------------------------
     // Margin
     // -----------------------------------------------------------------------
 
@@ -1284,6 +2485,235 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // MixBlendMode
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an element should blend with the background.
+     */
+    public static final class MixBlendMode {
+
+        public static final String NORMAL = "mix-blend-normal";
+        public static final String MULTIPLY = "mix-blend-multiply";
+        public static final String SCREEN = "mix-blend-screen";
+        public static final String OVERLAY = "mix-blend-overlay";
+        public static final String DARKEN = "mix-blend-darken";
+        public static final String LIGHTEN = "mix-blend-lighten";
+        public static final String COLOR_DODGE = "mix-blend-color-dodge";
+        public static final String COLOR_BURN = "mix-blend-color-burn";
+        public static final String HARD_LIGHT = "mix-blend-hard-light";
+        public static final String SOFT_LIGHT = "mix-blend-soft-light";
+        public static final String DIFFERENCE = "mix-blend-difference";
+        public static final String EXCLUSION = "mix-blend-exclusion";
+        public static final String HUE = "mix-blend-hue";
+        public static final String SATURATION = "mix-blend-saturation";
+        public static final String COLOR = "mix-blend-color";
+        public static final String LUMINOSITY = "mix-blend-luminosity";
+        public static final String PLUS_LIGHTER = "mix-blend-plus-lighter";
+
+        private MixBlendMode() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ObjectFit
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a replaced element's content should be
+     * resized.
+     */
+    public static final class ObjectFit {
+
+        public static final String CONTAIN = "object-contain";
+        public static final String COVER = "object-cover";
+        public static final String FILL = "object-fill";
+        public static final String NONE = "object-none";
+        public static final String SCALE_DOWN = "object-scale-down";
+
+        private ObjectFit() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ObjectPosition
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how a replaced element's content should be
+     * positioned within its container.
+     */
+    public static final class ObjectPosition {
+
+        public static final String BOTTOM = "object-bottom";
+        public static final String CENTER = "object-center";
+        public static final String LEFT = "object-left";
+        public static final String LEFT_BOTTOM = "object-left-bottom";
+        public static final String LEFT_TOP = "object-left-top";
+        public static final String RIGHT = "object-right";
+        public static final String RIGHT_BOTTOM = "object-right-bottom";
+        public static final String RIGHT_TOP = "object-right-top";
+        public static final String TOP = "object-top";
+
+        private ObjectPosition() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Opacity
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the opacity of an element.
+     */
+    public static final class Opacity {
+
+        public static final String _0 = "opacity-0";
+        public static final String _5 = "opacity-5";
+        public static final String _10 = "opacity-10";
+        public static final String _20 = "opacity-20";
+        public static final String _25 = "opacity-25";
+        public static final String _30 = "opacity-30";
+        public static final String _40 = "opacity-40";
+        public static final String _50 = "opacity-50";
+        public static final String _60 = "opacity-60";
+        public static final String _70 = "opacity-70";
+        public static final String _75 = "opacity-75";
+        public static final String _80 = "opacity-80";
+        public static final String _90 = "opacity-90";
+        public static final String _95 = "opacity-95";
+        public static final String _100 = "opacity-100";
+
+        private Opacity() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Order
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the order of flex and grid items.
+     */
+    public static final class Order {
+
+        public static final String FIRST = "order-first";
+        public static final String LAST = "order-last";
+        public static final String NONE = "order-none";
+        public static final String _1 = "order-1";
+        public static final String _2 = "order-2";
+        public static final String _3 = "order-3";
+        public static final String _4 = "order-4";
+        public static final String _5 = "order-5";
+        public static final String _6 = "order-6";
+        public static final String _7 = "order-7";
+        public static final String _8 = "order-8";
+        public static final String _9 = "order-9";
+        public static final String _10 = "order-10";
+        public static final String _11 = "order-11";
+        public static final String _12 = "order-12";
+
+        private Order() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Outline
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the outline of an element.
+     */
+    public static final class Outline {
+
+        public static final String NONE = "outline-none";
+        public static final String DEFAULT = "outline";
+        public static final String DASHED = "outline-dashed";
+        public static final String DOTTED = "outline-dotted";
+        public static final String DOUBLE = "outline-double";
+
+        private Outline() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // OutlineOffset
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the offset of an element's outline.
+     */
+    public static final class OutlineOffset {
+
+        public static final String _0 = "outline-offset-0";
+        public static final String _1 = "outline-offset-1";
+        public static final String _2 = "outline-offset-2";
+        public static final String _4 = "outline-offset-4";
+        public static final String _8 = "outline-offset-8";
+
+        private OutlineOffset() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // OutlineWidth
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the width of an element's outline.
+     */
+    public static final class OutlineWidth {
+
+        public static final String _0 = "outline-0";
+        public static final String _1 = "outline-1";
+        public static final String _2 = "outline-2";
+        public static final String _4 = "outline-4";
+        public static final String _8 = "outline-8";
+
+        private OutlineWidth() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Overscroll
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how the browser behaves when reaching the
+     * boundary of a scrolling area.
+     */
+    public static final class Overscroll {
+
+        public static final String AUTO = "overscroll-auto";
+        public static final String CONTAIN = "overscroll-contain";
+        public static final String NONE = "overscroll-none";
+
+        private Overscroll() {
+        }
+
+        /** Horizontal overscroll classes ({@code overscroll-x-*}). */
+        public static final class X {
+            public static final String AUTO = "overscroll-x-auto";
+            public static final String CONTAIN = "overscroll-x-contain";
+            public static final String NONE = "overscroll-x-none";
+
+            private X() {
+            }
+        }
+
+        /** Vertical overscroll classes ({@code overscroll-y-*}). */
+        public static final class Y {
+            public static final String AUTO = "overscroll-y-auto";
+            public static final String CONTAIN = "overscroll-y-contain";
+            public static final String NONE = "overscroll-y-none";
+
+            private Y() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Overflow    // -----------------------------------------------------------------------
     // Overflow
     // -----------------------------------------------------------------------
 
@@ -1453,6 +2883,86 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // PlaceContent
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how content is justified and aligned
+     * simultaneously in grid layouts.
+     */
+    public static final class PlaceContent {
+
+        public static final String CENTER = "place-content-center";
+        public static final String START = "place-content-start";
+        public static final String END = "place-content-end";
+        public static final String BETWEEN = "place-content-between";
+        public static final String AROUND = "place-content-around";
+        public static final String EVENLY = "place-content-evenly";
+        public static final String BASELINE = "place-content-baseline";
+        public static final String STRETCH = "place-content-stretch";
+
+        private PlaceContent() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // PlaceItems
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how items are justified and aligned
+     * simultaneously in grid layouts.
+     */
+    public static final class PlaceItems {
+
+        public static final String START = "place-items-start";
+        public static final String END = "place-items-end";
+        public static final String CENTER = "place-items-center";
+        public static final String BASELINE = "place-items-baseline";
+        public static final String STRETCH = "place-items-stretch";
+
+        private PlaceItems() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // PlaceSelf
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an individual item is justified and aligned
+     * simultaneously in a grid layout.
+     */
+    public static final class PlaceSelf {
+
+        public static final String AUTO = "place-self-auto";
+        public static final String START = "place-self-start";
+        public static final String END = "place-self-end";
+        public static final String CENTER = "place-self-center";
+        public static final String STRETCH = "place-self-stretch";
+
+        private PlaceSelf() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // PointerEvents
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling whether an element responds to pointer events.
+     */
+    public static final class PointerEvents {
+
+        public static final String NONE = "pointer-events-none";
+        public static final String AUTO = "pointer-events-auto";
+
+        private PointerEvents() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Position    // -----------------------------------------------------------------------
     // Position
     // -----------------------------------------------------------------------
 
@@ -1472,6 +2982,284 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // Resize
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an element can be resized.
+     */
+    public static final class Resize {
+
+        public static final String NONE = "resize-none";
+        public static final String Y = "resize-y";
+        public static final String X = "resize-x";
+        public static final String BOTH = "resize";
+
+        private Resize() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Ring
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for creating outline rings using box shadows ({@code ring-*}).
+     */
+    public static final class Ring {
+
+        public static final String NONE = "ring-0";
+        public static final String XSMALL = "ring-1";
+        public static final String SMALL = "ring-2";
+        public static final String DEFAULT = "ring";
+        public static final String MEDIUM = "ring-4";
+        public static final String LARGE = "ring-8";
+        public static final String INSET = "ring-inset";
+
+        private Ring() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Rotate
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for rotating elements with CSS transforms ({@code rotate-*}).
+     */
+    public static final class Rotate {
+
+        public static final String _0 = "rotate-0";
+        public static final String _1 = "rotate-1";
+        public static final String _2 = "rotate-2";
+        public static final String _3 = "rotate-3";
+        public static final String _6 = "rotate-6";
+        public static final String _12 = "rotate-12";
+        public static final String _45 = "rotate-45";
+        public static final String _90 = "rotate-90";
+        public static final String _180 = "rotate-180";
+
+        private Rotate() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Scale
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for scaling elements with CSS transforms ({@code scale-*}).
+     */
+    public static final class Scale {
+
+        public static final String _0 = "scale-0";
+        public static final String _50 = "scale-50";
+        public static final String _75 = "scale-75";
+        public static final String _90 = "scale-90";
+        public static final String _95 = "scale-95";
+        public static final String _100 = "scale-100";
+        public static final String _105 = "scale-105";
+        public static final String _110 = "scale-110";
+        public static final String _125 = "scale-125";
+        public static final String _150 = "scale-150";
+
+        private Scale() {
+        }
+
+        /** Horizontal-axis scale classes ({@code scale-x-*}). */
+        public static final class X {
+            public static final String _0 = "scale-x-0";
+            public static final String _50 = "scale-x-50";
+            public static final String _75 = "scale-x-75";
+            public static final String _90 = "scale-x-90";
+            public static final String _95 = "scale-x-95";
+            public static final String _100 = "scale-x-100";
+            public static final String _105 = "scale-x-105";
+            public static final String _110 = "scale-x-110";
+            public static final String _125 = "scale-x-125";
+            public static final String _150 = "scale-x-150";
+
+            private X() {
+            }
+        }
+
+        /** Vertical-axis scale classes ({@code scale-y-*}). */
+        public static final class Y {
+            public static final String _0 = "scale-y-0";
+            public static final String _50 = "scale-y-50";
+            public static final String _75 = "scale-y-75";
+            public static final String _90 = "scale-y-90";
+            public static final String _95 = "scale-y-95";
+            public static final String _100 = "scale-y-100";
+            public static final String _105 = "scale-y-105";
+            public static final String _110 = "scale-y-110";
+            public static final String _125 = "scale-y-125";
+            public static final String _150 = "scale-y-150";
+
+            private Y() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ScrollBehavior
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the scroll behavior of an element.
+     */
+    public static final class ScrollBehavior {
+
+        public static final String AUTO = "scroll-auto";
+        public static final String SMOOTH = "scroll-smooth";
+
+        private ScrollBehavior() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ScrollSnapAlign
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the scroll snap alignment of an element.
+     */
+    public static final class ScrollSnapAlign {
+
+        public static final String START = "snap-start";
+        public static final String END = "snap-end";
+        public static final String CENTER = "snap-center";
+        public static final String NONE = "snap-align-none";
+
+        private ScrollSnapAlign() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ScrollSnapStop
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling whether you can skip past possible snap
+     * positions.
+     */
+    public static final class ScrollSnapStop {
+
+        public static final String NORMAL = "snap-normal";
+        public static final String ALWAYS = "snap-always";
+
+        private ScrollSnapStop() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ScrollSnapType
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how strictly snap points are enforced in a
+     * scroll container.
+     */
+    public static final class ScrollSnapType {
+
+        public static final String NONE = "snap-none";
+        public static final String X = "snap-x";
+        public static final String Y = "snap-y";
+        public static final String BOTH = "snap-both";
+        public static final String MANDATORY = "snap-mandatory";
+        public static final String PROXIMITY = "snap-proximity";
+
+        private ScrollSnapType() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Size
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for setting both the width and height of an element
+     * simultaneously ({@code size-*}).
+     */
+    public static final class Size {
+
+        public static final String AUTO = "size-auto";
+        public static final String FULL = "size-full";
+        public static final String MIN = "size-min";
+        public static final String MAX = "size-max";
+        public static final String FIT = "size-fit";
+        public static final String NONE = "size-0";
+        public static final String XSMALL = "size-1";
+        public static final String SMALL = "size-2";
+        public static final String MEDIUM = "size-4";
+        public static final String LARGE = "size-6";
+        public static final String XLARGE = "size-8";
+        public static final String XXLARGE = "size-12";
+        public static final String XXXLARGE = "size-16";
+        public static final String XXXXLARGE = "size-24";
+        public static final String XXXXXLARGE = "size-32";
+
+        private Size() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Skew
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for skewing elements with CSS transforms ({@code skew-*}).
+     */
+    public static final class Skew {
+
+        private Skew() {
+        }
+
+        /** Horizontal-axis skew classes ({@code skew-x-*}). */
+        public static final class X {
+            public static final String _0 = "skew-x-0";
+            public static final String _1 = "skew-x-1";
+            public static final String _2 = "skew-x-2";
+            public static final String _3 = "skew-x-3";
+            public static final String _6 = "skew-x-6";
+            public static final String _12 = "skew-x-12";
+
+            private X() {
+            }
+        }
+
+        /** Vertical-axis skew classes ({@code skew-y-*}). */
+        public static final class Y {
+            public static final String _0 = "skew-y-0";
+            public static final String _1 = "skew-y-1";
+            public static final String _2 = "skew-y-2";
+            public static final String _3 = "skew-y-3";
+            public static final String _6 = "skew-y-6";
+            public static final String _12 = "skew-y-12";
+
+            private Y() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TableLayout
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the table layout algorithm.
+     */
+    public static final class TableLayout {
+
+        public static final String AUTO = "table-auto";
+        public static final String FIXED = "table-fixed";
+
+        private TableLayout() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextAlignment    // -----------------------------------------------------------------------
     // TextAlignment
     // -----------------------------------------------------------------------
 
@@ -1890,6 +3678,128 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // TextDecoration
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the decoration of text.
+     */
+    public static final class TextDecoration {
+
+        public static final String UNDERLINE = "underline";
+        public static final String OVERLINE = "overline";
+        public static final String LINE_THROUGH = "line-through";
+        public static final String NONE = "no-underline";
+
+        private TextDecoration() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextDecorationStyle
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the style of text decorations.
+     */
+    public static final class TextDecorationStyle {
+
+        public static final String SOLID = "decoration-solid";
+        public static final String DOUBLE = "decoration-double";
+        public static final String DOTTED = "decoration-dotted";
+        public static final String DASHED = "decoration-dashed";
+        public static final String WAVY = "decoration-wavy";
+
+        private TextDecorationStyle() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextDecorationThickness
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the thickness of text decorations.
+     */
+    public static final class TextDecorationThickness {
+
+        public static final String AUTO = "decoration-auto";
+        public static final String FROM_FONT = "decoration-from-font";
+        public static final String _0 = "decoration-0";
+        public static final String _1 = "decoration-1";
+        public static final String _2 = "decoration-2";
+        public static final String _4 = "decoration-4";
+        public static final String _8 = "decoration-8";
+
+        private TextDecorationThickness() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextIndent
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the amount of empty space shown before text
+     * in a block ({@code indent-*}).
+     */
+    public static final class TextIndent {
+
+        public static final String NONE = "indent-0";
+        public static final String XSMALL = "indent-1";
+        public static final String SMALL = "indent-2";
+        public static final String MEDIUM = "indent-4";
+        public static final String LARGE = "indent-6";
+        public static final String XLARGE = "indent-8";
+        public static final String XXLARGE = "indent-12";
+        public static final String XXXLARGE = "indent-16";
+        public static final String XXXXLARGE = "indent-24";
+        public static final String XXXXXLARGE = "indent-32";
+
+        private TextIndent() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextUnderlineOffset
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the offset of a text underline.
+     */
+    public static final class TextUnderlineOffset {
+
+        public static final String AUTO = "underline-offset-auto";
+        public static final String _0 = "underline-offset-0";
+        public static final String _1 = "underline-offset-1";
+        public static final String _2 = "underline-offset-2";
+        public static final String _4 = "underline-offset-4";
+        public static final String _8 = "underline-offset-8";
+
+        private TextUnderlineOffset() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextWrap
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how text wraps within an element.
+     */
+    public static final class TextWrap {
+
+        public static final String WRAP = "text-wrap";
+        public static final String NOWRAP = "text-nowrap";
+        public static final String BALANCE = "text-balance";
+        public static final String PRETTY = "text-pretty";
+
+        private TextWrap() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TextOverflow    // -----------------------------------------------------------------------
     // TextOverflow
     // -----------------------------------------------------------------------
 
@@ -1925,6 +3835,206 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // TouchAction
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling how an element can be scrolled and zoomed on
+     * touchscreens.
+     */
+    public static final class TouchAction {
+
+        public static final String AUTO = "touch-auto";
+        public static final String NONE = "touch-none";
+        public static final String PAN_X = "touch-pan-x";
+        public static final String PAN_LEFT = "touch-pan-left";
+        public static final String PAN_RIGHT = "touch-pan-right";
+        public static final String PAN_Y = "touch-pan-y";
+        public static final String PAN_UP = "touch-pan-up";
+        public static final String PAN_DOWN = "touch-pan-down";
+        public static final String PINCH_ZOOM = "touch-pinch-zoom";
+        public static final String MANIPULATION = "touch-manipulation";
+
+        private TouchAction() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Transform
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for enabling CSS transform utilities on an element.
+     */
+    public static final class Transform {
+
+        public static final String DEFAULT = "transform";
+        public static final String GPU = "transform-gpu";
+        public static final String NONE = "transform-none";
+
+        private Transform() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TransformOrigin
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for specifying the origin for an element's transformations.
+     */
+    public static final class TransformOrigin {
+
+        public static final String CENTER = "origin-center";
+        public static final String TOP = "origin-top";
+        public static final String TOP_RIGHT = "origin-top-right";
+        public static final String RIGHT = "origin-right";
+        public static final String BOTTOM_RIGHT = "origin-bottom-right";
+        public static final String BOTTOM = "origin-bottom";
+        public static final String BOTTOM_LEFT = "origin-bottom-left";
+        public static final String LEFT = "origin-left";
+        public static final String TOP_LEFT = "origin-top-left";
+
+        private TransformOrigin() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Transition
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling which CSS properties transition.
+     */
+    public static final class Transition {
+
+        public static final String NONE = "transition-none";
+        public static final String ALL = "transition-all";
+        public static final String DEFAULT = "transition";
+        public static final String COLORS = "transition-colors";
+        public static final String OPACITY = "transition-opacity";
+        public static final String SHADOW = "transition-shadow";
+        public static final String TRANSFORM = "transition-transform";
+
+        private Transition() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TransitionDelay
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the delay of CSS transitions ({@code delay-*}).
+     */
+    public static final class TransitionDelay {
+
+        public static final String _0 = "delay-0";
+        public static final String _75 = "delay-75";
+        public static final String _100 = "delay-100";
+        public static final String _150 = "delay-150";
+        public static final String _200 = "delay-200";
+        public static final String _300 = "delay-300";
+        public static final String _500 = "delay-500";
+        public static final String _700 = "delay-700";
+        public static final String _1000 = "delay-1000";
+
+        private TransitionDelay() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TransitionDuration
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the duration of CSS transitions
+     * ({@code duration-*}).
+     */
+    public static final class TransitionDuration {
+
+        public static final String _0 = "duration-0";
+        public static final String _75 = "duration-75";
+        public static final String _100 = "duration-100";
+        public static final String _150 = "duration-150";
+        public static final String _200 = "duration-200";
+        public static final String _300 = "duration-300";
+        public static final String _500 = "duration-500";
+        public static final String _700 = "duration-700";
+        public static final String _1000 = "duration-1000";
+
+        private TransitionDuration() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // TransitionTimingFunction
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the easing of CSS transitions ({@code ease-*}).
+     */
+    public static final class TransitionTimingFunction {
+
+        public static final String LINEAR = "ease-linear";
+        public static final String IN = "ease-in";
+        public static final String OUT = "ease-out";
+        public static final String IN_OUT = "ease-in-out";
+
+        private TransitionTimingFunction() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Translate
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for translating elements with CSS transforms
+     * ({@code translate-x-*}, {@code translate-y-*}).
+     */
+    public static final class Translate {
+
+        private Translate() {
+        }
+
+        /** Horizontal translation classes ({@code translate-x-*}). */
+        public static final class X {
+            public static final String NONE = "translate-x-0";
+            public static final String XSMALL = "translate-x-1";
+            public static final String SMALL = "translate-x-2";
+            public static final String MEDIUM = "translate-x-4";
+            public static final String LARGE = "translate-x-6";
+            public static final String XLARGE = "translate-x-8";
+            public static final String XXLARGE = "translate-x-12";
+            public static final String XXXLARGE = "translate-x-16";
+            public static final String FULL = "translate-x-full";
+            public static final String HALF = "translate-x-1/2";
+
+            private X() {
+            }
+        }
+
+        /** Vertical translation classes ({@code translate-y-*}). */
+        public static final class Y {
+            public static final String NONE = "translate-y-0";
+            public static final String XSMALL = "translate-y-1";
+            public static final String SMALL = "translate-y-2";
+            public static final String MEDIUM = "translate-y-4";
+            public static final String LARGE = "translate-y-6";
+            public static final String XLARGE = "translate-y-8";
+            public static final String XXLARGE = "translate-y-12";
+            public static final String XXXLARGE = "translate-y-16";
+            public static final String FULL = "translate-y-full";
+            public static final String HALF = "translate-y-1/2";
+
+            private Y() {
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Whitespace    // -----------------------------------------------------------------------
     // Whitespace
     // -----------------------------------------------------------------------
 
@@ -1975,6 +4085,102 @@ public final class TailwindUtility {
     }
 
     // -----------------------------------------------------------------------
+    // UserSelect
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling whether the user can select text in an element.
+     */
+    public static final class UserSelect {
+
+        public static final String NONE = "select-none";
+        public static final String TEXT = "select-text";
+        public static final String ALL = "select-all";
+        public static final String AUTO = "select-auto";
+
+        private UserSelect() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // VerticalAlign
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the vertical alignment of an inline or
+     * table-cell element.
+     */
+    public static final class VerticalAlign {
+
+        public static final String BASELINE = "align-baseline";
+        public static final String TOP = "align-top";
+        public static final String MIDDLE = "align-middle";
+        public static final String BOTTOM = "align-bottom";
+        public static final String TEXT_TOP = "align-text-top";
+        public static final String TEXT_BOTTOM = "align-text-bottom";
+        public static final String SUB = "align-sub";
+        public static final String SUPER = "align-super";
+
+        private VerticalAlign() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // Visibility
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling the visibility of an element.
+     */
+    public static final class Visibility {
+
+        public static final String VISIBLE = "visible";
+        public static final String INVISIBLE = "invisible";
+        public static final String COLLAPSE = "collapse";
+
+        private Visibility() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // WillChange
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for optimising upcoming animations of elements that are expected
+     * to change.
+     */
+    public static final class WillChange {
+
+        public static final String AUTO = "will-change-auto";
+        public static final String SCROLL = "will-change-scroll";
+        public static final String CONTENTS = "will-change-contents";
+        public static final String TRANSFORM = "will-change-transform";
+
+        private WillChange() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // WordBreak
+    // -----------------------------------------------------------------------
+
+    /**
+     * Classes for controlling word breaks in an element.
+     */
+    public static final class WordBreak {
+
+        public static final String NORMAL = "break-normal";
+        public static final String WORDS = "break-words";
+        public static final String ALL = "break-all";
+        public static final String KEEP = "break-keep";
+
+        private WordBreak() {
+        }
+    }
+
+    // -----------------------------------------------------------------------
+    // ZIndex    // -----------------------------------------------------------------------
     // ZIndex
     // -----------------------------------------------------------------------
 
