@@ -1,0 +1,29 @@
+# Maven build output
+target/
+
+# IDE files
+.idea/
+*.iml
+.eclipse/
+.classpath
+.project
+.settings/
+*.code-workspace
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Vaadin generated files
+node_modules/
+package-lock.json
+pnpm-lock.yaml
+webpack.config.js
+webpack.generated.js
+vaadin-dev-server-settings.json
+src/main/frontend/generated/
+src/main/resources/META-INF/VAADIN/
+
+# Logs
+*.log
