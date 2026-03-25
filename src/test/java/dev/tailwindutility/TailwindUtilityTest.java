@@ -1398,6 +1398,211 @@ class TailwindUtilityTest {
     }
 
     // -----------------------------------------------------------------------
+    // GradientColorStops
+    // -----------------------------------------------------------------------
+
+    @Test
+    void gradientColorStops_from_mapToCorrectClasses() {
+        assertEquals("from-black", TailwindUtility.GradientColorStops.From.BLACK);
+        assertEquals("from-white", TailwindUtility.GradientColorStops.From.WHITE);
+        assertEquals("from-transparent", TailwindUtility.GradientColorStops.From.TRANSPARENT);
+        assertEquals("from-blue-500", TailwindUtility.GradientColorStops.From.Blue._500);
+        assertEquals("from-slate-50", TailwindUtility.GradientColorStops.From.Slate._50);
+        assertEquals("from-rose-950", TailwindUtility.GradientColorStops.From.Rose._950);
+    }
+
+    @Test
+    void gradientColorStops_via_mapToCorrectClasses() {
+        assertEquals("via-black", TailwindUtility.GradientColorStops.Via.BLACK);
+        assertEquals("via-white", TailwindUtility.GradientColorStops.Via.WHITE);
+        assertEquals("via-red-300", TailwindUtility.GradientColorStops.Via.Red._300);
+        assertEquals("via-green-700", TailwindUtility.GradientColorStops.Via.Green._700);
+    }
+
+    @Test
+    void gradientColorStops_to_mapToCorrectClasses() {
+        assertEquals("to-black", TailwindUtility.GradientColorStops.To.BLACK);
+        assertEquals("to-transparent", TailwindUtility.GradientColorStops.To.TRANSPARENT);
+        assertEquals("to-indigo-500", TailwindUtility.GradientColorStops.To.Indigo._500);
+        assertEquals("to-pink-100", TailwindUtility.GradientColorStops.To.Pink._100);
+    }
+
+    // -----------------------------------------------------------------------
+    // OutlineColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void outlineColor_constants_mapToCorrectClasses() {
+        assertEquals("outline-black", TailwindUtility.OutlineColor.BLACK);
+        assertEquals("outline-white", TailwindUtility.OutlineColor.WHITE);
+        assertEquals("outline-transparent", TailwindUtility.OutlineColor.TRANSPARENT);
+        assertEquals("outline-blue-500", TailwindUtility.OutlineColor.Blue._500);
+        assertEquals("outline-red-300", TailwindUtility.OutlineColor.Red._300);
+        assertEquals("outline-slate-950", TailwindUtility.OutlineColor.Slate._950);
+    }
+
+    // -----------------------------------------------------------------------
+    // RingColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void ringColor_constants_mapToCorrectClasses() {
+        assertEquals("ring-black", TailwindUtility.RingColor.BLACK);
+        assertEquals("ring-white", TailwindUtility.RingColor.WHITE);
+        assertEquals("ring-blue-500", TailwindUtility.RingColor.Blue._500);
+        assertEquals("ring-green-200", TailwindUtility.RingColor.Green._200);
+    }
+
+    // -----------------------------------------------------------------------
+    // RingOffsetColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void ringOffsetColor_constants_mapToCorrectClasses() {
+        assertEquals("ring-offset-black", TailwindUtility.RingOffsetColor.BLACK);
+        assertEquals("ring-offset-white", TailwindUtility.RingOffsetColor.WHITE);
+        assertEquals("ring-offset-blue-500", TailwindUtility.RingOffsetColor.Blue._500);
+    }
+
+    // -----------------------------------------------------------------------
+    // ShadowColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void shadowColor_constants_mapToCorrectClasses() {
+        assertEquals("shadow-black", TailwindUtility.ShadowColor.BLACK);
+        assertEquals("shadow-white", TailwindUtility.ShadowColor.WHITE);
+        assertEquals("shadow-blue-500", TailwindUtility.ShadowColor.Blue._500);
+        assertEquals("shadow-slate-300", TailwindUtility.ShadowColor.Slate._300);
+    }
+
+    // -----------------------------------------------------------------------
+    // TextDecorationColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void textDecorationColor_constants_mapToCorrectClasses() {
+        assertEquals("decoration-black", TailwindUtility.TextDecorationColor.BLACK);
+        assertEquals("decoration-white", TailwindUtility.TextDecorationColor.WHITE);
+        assertEquals("decoration-blue-500", TailwindUtility.TextDecorationColor.Blue._500);
+        assertEquals("decoration-rose-700", TailwindUtility.TextDecorationColor.Rose._700);
+    }
+
+    // -----------------------------------------------------------------------
+    // FillColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void fillColor_constants_mapToCorrectClasses() {
+        assertEquals("fill-black", TailwindUtility.FillColor.BLACK);
+        assertEquals("fill-white", TailwindUtility.FillColor.WHITE);
+        assertEquals("fill-transparent", TailwindUtility.FillColor.TRANSPARENT);
+        assertEquals("fill-blue-500", TailwindUtility.FillColor.Blue._500);
+        assertEquals("fill-green-300", TailwindUtility.FillColor.Green._300);
+    }
+
+    // -----------------------------------------------------------------------
+    // StrokeColor
+    // -----------------------------------------------------------------------
+
+    @Test
+    void strokeColor_constants_mapToCorrectClasses() {
+        assertEquals("stroke-black", TailwindUtility.StrokeColor.BLACK);
+        assertEquals("stroke-white", TailwindUtility.StrokeColor.WHITE);
+        assertEquals("stroke-blue-500", TailwindUtility.StrokeColor.Blue._500);
+    }
+
+    // -----------------------------------------------------------------------
+    // StrokeWidth
+    // -----------------------------------------------------------------------
+
+    @Test
+    void strokeWidth_constants_mapToCorrectClasses() {
+        assertEquals("stroke-0", TailwindUtility.StrokeWidth.NONE);
+        assertEquals("stroke-1", TailwindUtility.StrokeWidth.SMALL);
+        assertEquals("stroke-2", TailwindUtility.StrokeWidth.MEDIUM);
+    }
+
+    // -----------------------------------------------------------------------
+    // Direction
+    // -----------------------------------------------------------------------
+
+    @Test
+    void direction_constants_mapToCorrectClasses() {
+        assertEquals("ltr", TailwindUtility.Direction.LTR);
+        assertEquals("rtl", TailwindUtility.Direction.RTL);
+    }
+
+    // -----------------------------------------------------------------------
+    // Content
+    // -----------------------------------------------------------------------
+
+    @Test
+    void content_constants_mapToCorrectClasses() {
+        assertEquals("content-none", TailwindUtility.Content.NONE);
+    }
+
+    // -----------------------------------------------------------------------
+    // Divide
+    // -----------------------------------------------------------------------
+
+    @Test
+    void divide_style_constants_mapToCorrectClasses() {
+        assertEquals("divide-solid", TailwindUtility.Divide.SOLID);
+        assertEquals("divide-dashed", TailwindUtility.Divide.DASHED);
+        assertEquals("divide-dotted", TailwindUtility.Divide.DOTTED);
+        assertEquals("divide-double", TailwindUtility.Divide.DOUBLE);
+        assertEquals("divide-none", TailwindUtility.Divide.NONE);
+    }
+
+    @Test
+    void divide_x_constants_mapToCorrectClasses() {
+        assertEquals("divide-x-0", TailwindUtility.Divide.X.NONE);
+        assertEquals("divide-x", TailwindUtility.Divide.X.DEFAULT);
+        assertEquals("divide-x-2", TailwindUtility.Divide.X.XSMALL);
+        assertEquals("divide-x-4", TailwindUtility.Divide.X.SMALL);
+        assertEquals("divide-x-8", TailwindUtility.Divide.X.MEDIUM);
+        assertEquals("divide-x-reverse", TailwindUtility.Divide.X.REVERSE);
+    }
+
+    @Test
+    void divide_y_constants_mapToCorrectClasses() {
+        assertEquals("divide-y-0", TailwindUtility.Divide.Y.NONE);
+        assertEquals("divide-y", TailwindUtility.Divide.Y.DEFAULT);
+        assertEquals("divide-y-2", TailwindUtility.Divide.Y.XSMALL);
+        assertEquals("divide-y-reverse", TailwindUtility.Divide.Y.REVERSE);
+    }
+
+    @Test
+    void divide_color_constants_mapToCorrectClasses() {
+        assertEquals("divide-black", TailwindUtility.Divide.Color.BLACK);
+        assertEquals("divide-white", TailwindUtility.Divide.Color.WHITE);
+        assertEquals("divide-blue-500", TailwindUtility.Divide.Color.Blue._500);
+        assertEquals("divide-gray-200", TailwindUtility.Divide.Color.Gray._200);
+        assertEquals("divide-red-400", TailwindUtility.Divide.Color.Red._400);
+    }
+
+    // -----------------------------------------------------------------------
+    // SpaceBetween
+    // -----------------------------------------------------------------------
+
+    @Test
+    void spaceBetween_x_constants_mapToCorrectClasses() {
+        assertEquals("space-x-0", TailwindUtility.SpaceBetween.X.NONE);
+        assertEquals("space-x-1", TailwindUtility.SpaceBetween.X.XSMALL);
+        assertEquals("space-x-2", TailwindUtility.SpaceBetween.X.SMALL);
+        assertEquals("space-x-4", TailwindUtility.SpaceBetween.X.MEDIUM);
+        assertEquals("space-x-reverse", TailwindUtility.SpaceBetween.X.REVERSE);
+    }
+
+    @Test
+    void spaceBetween_y_constants_mapToCorrectClasses() {
+        assertEquals("space-y-0", TailwindUtility.SpaceBetween.Y.NONE);
+        assertEquals("space-y-4", TailwindUtility.SpaceBetween.Y.MEDIUM);
+        assertEquals("space-y-reverse", TailwindUtility.SpaceBetween.Y.REVERSE);
+    }
+
+    // -----------------------------------------------------------------------
     // Feature flags resource
     // -----------------------------------------------------------------------
 
