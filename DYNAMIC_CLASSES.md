@@ -1,17 +1,109 @@
-# Tailwind CSS Classes That Cannot Be Represented as Static Constants
+# Tailwind CSS Classes and Type-Safe Strategies
 
-This document catalogues all Tailwind CSS v3 utility classes—and class-construction
-mechanisms—that **cannot be pre-enumerated as static `String` constants** in
-`TailwindUtility`. Understanding these limits is important for library consumers who
-need to fall back to raw string literals.
-
-The challenge shared by every category below is the same: the class name is assembled at
-**runtime** from a value that is either user-defined, continuous, or contextual, making a
-finite compile-time list impossible.
+This document catalogues Tailwind CSS v3 utility classes that **could not
+originally be expressed as static `String` constants** in `TailwindUtility`,
+explains which of those gaps have since been addressed, and describes how to
+work with the categories that still require runtime construction.
 
 ---
 
-## 1. Arbitrary-Value Utilities (Bracket Syntax)
+## What Has Been Added
+
+The following categories, which previously required raw string literals, are
+now covered by static constants or helper utilities in this library.
+
+### Static constants now available in `TailwindUtility`
+
+| Class / sub-class | Tailwind prefix | Notes |
+|---|---|---|
+| `GradientColorStops.From` | `from-*` | Full 22-color palette + black/white/transparent |
+| `GradientColorStops.Via` | `via-*` | Full 22-color palette + black/white/transparent |
+| `GradientColorStops.To` | `to-*` | Full 22-color palette + black/white/transparent |
+| `OutlineColor` | `outline-*` | Full 22-color palette |
+| `RingColor` | `ring-*` | Full 22-color palette |
+| `RingOffsetColor` | `ring-offset-*` | Full 22-color palette |
+| `ShadowColor` | `shadow-*` | Full 22-color palette (tints existing shadows) |
+| `TextDecorationColor` | `decoration-*` | Full 22-color palette |
+| `FillColor` | `fill-*` | Full 22-color palette (SVG) |
+| `StrokeColor` | `stroke-*` | Full 22-color palette (SVG) |
+| `StrokeWidth` | `stroke-{0,1,2}` | Three discrete SVG stroke widths |
+| `Divide` | `divide-solid/dashed/…` | Style constants |
+| `Divide.X` / `Divide.Y` | `divide-x-*` / `divide-y-*` | Width constants + reverse |
+| `Divide.Color` | `divide-*` | Core color palette |
+| `SpaceBetween.X` / `SpaceBetween.Y` | `space-x-*` / `space-y-*` | Spacing-scale constants + reverse |
+| `Direction` | `ltr` / `rtl` | Marks reading direction on container elements |
+| `Content` | `content-none` | The only static content value |
+
+### Variant-prefix composition via `TailwindVariant`
+
+The new `TailwindVariant` class provides a type-safe factory method for every
+Tailwind variant prefix.  Instead of writing a magic string, pass a base class
+string (typically a `TailwindUtility` constant) to the appropriate method and
+receive the correctly prefixed class:
+
+```java
+// Responsive
+component.addClassName(TailwindVariant.md(TailwindUtility.Display.FLEX));
+// => "md:flex"
+
+// Hover state
+component.addClassName(TailwindVariant.hover(TailwindUtility.Background.Blue._700));
+// => "hover:bg-blue-700"
+
+// Dark mode
+component.addClassName(TailwindVariant.dark(TailwindUtility.Background.Gray._900));
+// => "dark:bg-gray-900"
+
+// Disabled state
+component.addClassName(TailwindVariant.disabled(TailwindUtility.Opacity._50));
+// => "disabled:opacity-50"
+
+// ARIA variant
+component.addClassName(TailwindVariant.ariaChecked(TailwindUtility.Background.Blue._500));
+// => "aria-checked:bg-blue-500"
+
+// Group interaction (hover on parent → style child)
+div.addClassName("group");
+span.addClassName(TailwindVariant.group("hover", TailwindUtility.TextColor.Blue._500));
+// => "group-hover:text-blue-500"
+
+// Peer interaction (sibling state → style element)
+input.addClassName("peer");
+label.addClassName(TailwindVariant.peer("focus", TailwindUtility.TextColor.Blue._600));
+// => "peer-focus:text-blue-600"
+
+// Chaining variants (dark + hover)
+component.addClassName(
+    TailwindVariant.dark(TailwindVariant.hover(TailwindUtility.Background.Blue._700)));
+// => "dark:hover:bg-blue-700"
+```
+
+**Supported variant methods in `TailwindVariant`:**
+
+| Category | Methods |
+|---|---|
+| Responsive | `sm`, `md`, `lg`, `xl`, `xxl` |
+| Interactive state | `hover`, `focus`, `focusVisible`, `focusWithin`, `active`, `visited`, `target`, `open` |
+| Form state | `checked`, `indeterminate`, `defaultState`, `required`, `optional`, `valid`, `invalid`, `inRange`, `outOfRange`, `placeholderShown`, `autofill`, `readOnly`, `disabled`, `enabled` |
+| Positional / structural | `first`, `last`, `only`, `odd`, `even`, `firstOfType`, `lastOfType`, `onlyOfType`, `empty` |
+| Pseudo-element | `before`, `after`, `placeholder`, `file`, `marker`, `selection`, `firstLetter`, `firstLine`, `backdrop` |
+| Media / feature query | `dark`, `print`, `portrait`, `landscape`, `motionSafe`, `motionReduce`, `contrastMore`, `contrastLess`, `forcedColors` |
+| Direction | `ltr`, `rtl` |
+| Group / Peer | `group(state, cls)`, `peer(state, cls)` |
+| ARIA (named) | `ariaChecked`, `ariaDisabled`, `ariaExpanded`, `ariaHidden`, `ariaPressed`, `ariaReadonly`, `ariaRequired`, `ariaSelected` |
+| ARIA (arbitrary) | `aria(attribute, cls)` |
+
+---
+
+## What Still Cannot Be Pre-Enumerated
+
+The challenge shared by every remaining category below is the same: the class
+name is assembled at **runtime** from a value that is either user-defined,
+continuous, or contextual, making a finite compile-time list impossible.
+
+---
+
+### A — Arbitrary-Value Utilities (Bracket Syntax)
 
 Tailwind allows *any* CSS value to be passed directly inside square brackets.
 
@@ -80,7 +172,7 @@ Tailwind allows *any* CSS value to be passed directly inside square brackets.
 
 ---
 
-## 2. Full Tailwind Default Spacing Scale (Partial Coverage Only)
+### B — Full Tailwind Default Spacing Scale (Partial Coverage Only)
 
 `TailwindUtility` covers a curated subset of spacing values
 (e.g. `m-1`, `m-2`, `m-4`, `m-6`, `m-8`, `m-12`, `m-16`).
@@ -110,7 +202,7 @@ that are not pre-enumerated:
 
 ---
 
-## 3. Negative Value Variants
+### C — Negative Value Variants
 
 Tailwind generates negative counterparts (prefixed with `-`) for many
 spacing-scale utilities.  None of these can be expressed as non-negative
@@ -131,7 +223,7 @@ constants:
 
 ---
 
-## 4. Color Opacity Modifier (Slash Syntax)
+### D — Color Opacity Modifier (Slash Syntax)
 
 Tailwind v3 introduced the `/opacity` modifier that appends an opacity
 percentage to any color class.  The resulting class name is a **combination**
@@ -146,230 +238,66 @@ value: `bg-blue-500/[0.33]`).
 
 ---
 
-## 5. Responsive Breakpoint Prefixes
+### E — Responsive Breakpoint Prefixes (arbitrary breakpoints only)
 
-Breakpoint variants prefix any utility with a screen size token.  Because
-they combine with the full utility space, they multiply the class count
-to a number far beyond what static constants can cover.
+Named breakpoints (`sm:`, `md:`, `lg:`, `xl:`, `2xl:`) are fully covered by
+`TailwindVariant`.  Arbitrary breakpoints still require raw strings:
 
-**Built-in breakpoints:** `sm:`, `md:`, `lg:`, `xl:`, `2xl:`
-
-**Arbitrary breakpoints:** `min-[640px]:`, `max-[768px]:`
-
-**Example:**
-```html
-<div class="w-full md:w-1/2 lg:w-1/3">
+```java
+// arbitrary min/max breakpoints — raw string only
+component.addClassName("min-[640px]:flex");
+component.addClassName("max-[768px]:hidden");
 ```
 
 ---
 
-## 6. State / Pseudo-Class Variant Prefixes
+### F — Named Group / Peer Variants
 
-These prefixes apply a conditional modifier to any base utility.
-Combined with the full utility surface, they produce an open-ended set
-of class names.
+`TailwindVariant.group(state, cls)` and `TailwindVariant.peer(state, cls)` cover
+the common case.  Named group/peer modifiers (e.g. `group/sidebar-hover:`) still
+require raw strings:
 
-### Positional
-`first:`, `last:`, `only:`, `odd:`, `even:`,
-`first-of-type:`, `last-of-type:`, `only-of-type:`
-
-### Form state
-`default:`, `checked:`, `indeterminate:`, `placeholder-shown:`,
-`autofill:`, `optional:`, `required:`, `valid:`, `invalid:`,
-`in-range:`, `out-of-range:`, `read-only:`
-
-### Interactive state
-`hover:`, `focus:`, `focus-within:`, `focus-visible:`,
-`active:`, `visited:`, `target:`, `open:`,
-`enabled:`, `disabled:`
-
-### Misc
-`empty:`
-
-**Example:**
-```html
-<button class="bg-blue-500 hover:bg-blue-700 focus:ring-2 disabled:opacity-50">
+```java
+// named group — raw string only
+component.addClassName("group/sidebar");
+component.addClassName("group-hover/sidebar:opacity-100");
 ```
 
 ---
 
-## 7. Pseudo-Element Variant Prefixes
-
-`before:`, `after:`, `placeholder:`, `file:`,
-`marker:`, `selection:`, `first-letter:`, `first-line:`, `backdrop:`
-
-**Example:**
-```html
-<p class="first-letter:text-4xl before:content-['»']">
-```
-
----
-
-## 8. Media / Feature Query Variants
-
-| Variant | Condition |
-|---|---|
-| `dark:` | `prefers-color-scheme: dark` |
-| `portrait:` | `orientation: portrait` |
-| `landscape:` | `orientation: landscape` |
-| `motion-safe:` | `prefers-reduced-motion: no-preference` |
-| `motion-reduce:` | `prefers-reduced-motion: reduce` |
-| `contrast-more:` | `prefers-contrast: more` |
-| `contrast-less:` | `prefers-contrast: less` |
-| `forced-colors:` | `forced-colors: active` |
-| `print:` | `@media print` |
-
----
-
-## 9. Direction Variants
-
-`ltr:`, `rtl:`
-
----
-
-## 10. Group / Peer Interaction Variants
-
-These allow styling an element based on the state of a parent (`group`)
-or sibling (`peer`) element. The variant name includes the state of the
-other element, so the combinatorial space is unbounded.
-
-```html
-<div class="group">
-  <span class="group-hover:text-blue-500">…</span>
-</div>
-```
-
-**Pattern:** `group-{state}:`, `peer-{state}:`  
-**Named groups/peers:** `group/{name}-{state}:`, `peer/{name}-{state}:`
-
----
-
-## 11. ARIA Variants
-
-```html
-<button class="aria-checked:bg-blue-500" aria-checked="true">
-```
-
-**Built-in:** `aria-checked:`, `aria-disabled:`, `aria-expanded:`,
-`aria-hidden:`, `aria-pressed:`, `aria-readonly:`, `aria-required:`,
-`aria-selected:`
-
-**Arbitrary:** `aria-[sort=ascending]:`, `aria-[labelledby=a11y-title]:`
-
----
-
-## 12. Data Attribute Variants
+### G — `data-[…]:` Attribute Variants
 
 ```html
 <div data-size="large" class="data-[size=large]:p-8">
 ```
 
-**Pattern:** `data-[key=value]:`, `data-[key]:`
+Pattern: `data-[key=value]:`, `data-[key]:`
 
 ---
 
-## 13. `supports-` Variants
+### H — `supports-[…]:` Variants
 
 ```html
 <div class="supports-[display:grid]:grid">
 ```
 
-**Pattern:** `supports-[{css-declaration}]:`
+Pattern: `supports-[{css-declaration}]:`
 
 ---
 
-## 14. `:has()` Variants
+### I — `:has()`, `not-[…]:` Variants
 
 ```html
 <div class="has-[:checked]:bg-blue-50">
-```
-
-**Pattern:** `has-[{selector}]:`, `group-has-[{selector}]:`, `peer-has-[{selector}]:`
-
----
-
-## 15. `not-` Variants
-
-```html
 <div class="not-[:checked]:opacity-50">
 ```
 
-**Pattern:** `not-[{selector}]:`
+Pattern: `has-[{selector}]:`, `group-has-[{selector}]:`, `peer-has-[{selector}]:`,
+`not-[{selector}]:`
 
 ---
 
-## 16. Gradient Color Stops
-
-`from-{color}`, `via-{color}`, `to-{color}` plus positional variants
-`from-{percent}`, `via-{percent}`, `to-{percent}` and arbitrary values
-`from-[#1a2b3c]`, `via-[rgba(0,0,0,0.5)]`.
-
-The **color** portion reuses the same 22 × 11 palette already in
-`TextColor`, `Background`, and `BorderColor`.  Adding three mirror-image
-color tables (~726 strings) would add no new information; the only
-difference is the prefix.
-
----
-
-## 17. Divide Utilities
-
-`divide-x-{n}`, `divide-y-{n}`, `divide-{color}`, `divide-opacity-{n}`,
-`divide-solid`, `divide-dashed`, `divide-dotted`, `divide-double`,
-`divide-none`, `divide-x-reverse`, `divide-y-reverse`
-
-These use the CSS selector `& > :not([hidden]) ~ :not([hidden])` and apply
-styles between sibling elements, not to the element itself.  The color and
-width values are the same scales already enumerated elsewhere.
-
----
-
-## 18. Space Between Utilities
-
-`space-x-{n}`, `space-y-{n}`, `space-x-reverse`, `space-y-reverse`
-
-Like Divide, these target child elements via a sibling CSS selector rather
-than the element itself.  Using `Gap` with a flex or grid container is the
-preferred modern alternative.
-
----
-
-## 19. Fill / Stroke / StrokeWidth
-
-`fill-{color}`, `stroke-{color}`, `stroke-0`, `stroke-1`, `stroke-2`
-
-SVG-specific utilities.  The color palette reuses the same 22 × 11 palette.
-These are rarely needed in Vaadin server-side component development.
-
----
-
-## 20. Placeholder Color / Caret Color / Accent Color
-
-`placeholder-{color}`, `caret-{color}`, `accent-{color}`,
-`placeholder-opacity-{n}`
-
-`PlaceholderColor` is deprecated in Tailwind v3+ (use `::placeholder` pseudo-element
-with `before:` instead).  `CaretColor` and `AccentColor` are highly specific
-form-element styling utilities with limited use in typical Vaadin UIs.
-
----
-
-## 21. Box Shadow Color
-
-`shadow-{color}` — applies a tinted color to an existing box shadow
-(`--tw-shadow-color`).  The color palette is the same 22 × 11 grid.
-
----
-
-## 22. Outline Color / Ring Color / Ring Offset Color
-
-`outline-{color}`, `ring-{color}`, `ring-offset-{color}`
-
-Color classes using the same 22 × 11 palette.  Not enumerated to avoid
-duplicating the palette for every decoration type.
-
----
-
-## 23. Scroll Margin / Scroll Padding
+### J — Scroll Margin / Scroll Padding
 
 `scroll-m-*`, `scroll-mx-*`, `scroll-my-*`, `scroll-mt-*`, …
 `scroll-p-*`, `scroll-px-*`, `scroll-py-*`, `scroll-pt-*`, …
@@ -380,7 +308,7 @@ to the value returned by `Margin.Top.MEDIUM` (`mt-4` → `scroll-mt-4`).
 
 ---
 
-## 24. Border Spacing
+### K — Border Spacing
 
 `border-spacing-{n}`, `border-spacing-x-{n}`, `border-spacing-y-{n}`
 
@@ -388,33 +316,12 @@ Follows the spacing scale.  Used with `border-separate` tables.
 
 ---
 
-## 25. Text Decoration Color
-
-`decoration-{color}` — sets the `text-decoration-color` using the full
-22 × 11 color palette.  Thickness and style *are* enumerated in
-`TextDecorationThickness` and `TextDecorationStyle`.
-
----
-
-## 26. Content Utilities
-
-`content-none` is a static value available in CSS; arbitrary string content
-requires bracket syntax:
-
-```html
-<span class="before:content-['Chapter_1:']">
-```
-
-**Pattern:** `content-['{string}']`, `content-none`
-
----
-
-## 27. Deprecated Opacity Utilities
+### L — Deprecated Opacity Utilities
 
 `bg-opacity-{n}`, `border-opacity-{n}`, `text-opacity-{n}`,
 `placeholder-opacity-{n}`, `divide-opacity-{n}`, `ring-opacity-{n}`
 
-Replaced in Tailwind v3+ by the `/opacity` modifier (section 4 above).
+Replaced in Tailwind v3+ by the `/opacity` modifier (section D above).
 Retained in the framework for backwards compatibility but not recommended
 for new code.
 
@@ -422,7 +329,58 @@ for new code.
 
 ## Guidance for Library Consumers
 
-When you need a class from one of the categories above, use a string literal:
+### Using static constants for gradient, ring, shadow, and decoration colors
+
+```java
+// gradient stop
+component.addClassName(TailwindUtility.GradientColorStops.From.Blue._500); // "from-blue-500"
+component.addClassName(TailwindUtility.GradientColorStops.Via.Purple._400); // "via-purple-400"
+component.addClassName(TailwindUtility.GradientColorStops.To.Pink._300);   // "to-pink-300"
+
+// outline, ring, and shadow colors
+component.addClassName(TailwindUtility.OutlineColor.Blue._500);  // "outline-blue-500"
+component.addClassName(TailwindUtility.RingColor.Blue._500);     // "ring-blue-500"
+component.addClassName(TailwindUtility.ShadowColor.Slate._300);  // "shadow-slate-300"
+
+// text decoration color
+component.addClassName(TailwindUtility.TextDecorationColor.Red._500); // "decoration-red-500"
+
+// SVG fill and stroke
+component.addClassName(TailwindUtility.FillColor.Blue._500);   // "fill-blue-500"
+component.addClassName(TailwindUtility.StrokeColor.Red._500);  // "stroke-red-500"
+component.addClassName(TailwindUtility.StrokeWidth.MEDIUM);    // "stroke-2"
+```
+
+### Using `TailwindVariant` for variant prefixes
+
+```java
+// Instead of magic strings like "hover:bg-blue-700":
+component.addClassName(TailwindVariant.hover(TailwindUtility.Background.Blue._700));
+
+// Responsive layouts
+component.addClassName(TailwindVariant.md(TailwindUtility.Display.FLEX));
+component.addClassName(TailwindVariant.lg(TailwindUtility.Width.FULL));
+
+// Dark mode
+component.addClassName(TailwindVariant.dark(TailwindUtility.Background.Gray._900));
+component.addClassName(TailwindVariant.dark(TailwindVariant.hover(TailwindUtility.Background.Blue._700)));
+
+// Form state
+component.addClassName(TailwindVariant.disabled(TailwindUtility.Opacity._50));
+component.addClassName(TailwindVariant.invalid(TailwindUtility.BorderColor.Red._500));
+
+// Accessibility / ARIA
+component.addClassName(TailwindVariant.ariaChecked(TailwindUtility.Background.Blue._500));
+component.addClassName(TailwindVariant.ariaExpanded("rotate-180"));
+
+// Group hover (parent → child styling)
+div.addClassName("group");
+span.addClassName(TailwindVariant.group("hover", TailwindUtility.TextColor.Blue._500));
+```
+
+### Falling back to raw strings
+
+For anything not yet covered by the library, use a raw string literal:
 
 ```java
 // arbitrary value
@@ -435,23 +393,22 @@ component.addClassName("-mt-4");
 // color opacity modifier
 component.addClassName("bg-blue-500/50");
 
-// responsive prefix
-component.addClassName("md:hidden");
+// arbitrary breakpoint
+component.addClassName("min-[640px]:flex");
 
-// hover state
-component.addClassName("hover:bg-blue-700");
+// data attribute variant
+component.addClassName("data-[size=large]:p-8");
 
 // full spacing scale value not in TailwindUtility
 component.addClassName("m-14");   // 14 is in the scale but not a named constant
 component.addClassName("p-3.5");  // fractional steps need a raw string
 ```
 
-For classes using Tailwind's standard color palette with a different prefix
-(gradient stops, divide color, shadow color, etc.), derive the color token
-from the existing palette constants:
+For color-prefixed classes not enumerated for a specific prefix, you can
+derive the color token from an existing palette constant:
 
 ```java
-// "from-slate-500" — use the same token name as TextColor.Slate._500
+// "from-slate-500" — strip the existing prefix, add the gradient prefix
 String fromSlate500 = "from-" + TailwindUtility.TextColor.Slate._500
         .replaceFirst("^text-", "");   // "from-slate-500"
 ```
