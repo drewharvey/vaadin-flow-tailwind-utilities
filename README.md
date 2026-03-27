@@ -24,7 +24,7 @@ name.addClassNames(TailwindUtility.FontSize.XLARGE, TailwindUtility.FontWeight.B
 
 ## Features
 
-* **Complete Tailwind coverage** — constants for all standard Tailwind v3 utility
+* **Complete Tailwind coverage** — constants for all standard Tailwind v4 utility
   classes: spacing, layout, typography, colors, flexbox, grid, and more.
 * **Full Tailwind color palette** — all 22 color families × 11 shades are available
   as nested classes inside `TextColor`, `Background`, and `BorderColor`.
@@ -34,8 +34,8 @@ name.addClassNames(TailwindUtility.FontSize.XLARGE, TailwindUtility.FontWeight.B
 
 ## Requirements
 
-* Java 17+
-* Vaadin 24+
+* Java 21+
+* Vaadin 25+
 
 ## Installation
 

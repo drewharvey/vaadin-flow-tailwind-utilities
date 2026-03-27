@@ -569,6 +569,7 @@ public final class TailwindUtility {
     public static final class BackdropFilter {
 
         public static final String NONE = "backdrop-blur-none";
+        public static final String BLUR_XSMALL = "backdrop-blur-xs";
         public static final String BLUR_SMALL = "backdrop-blur-sm";
         public static final String BLUR = "backdrop-blur";
         public static final String BLUR_MEDIUM = "backdrop-blur-md";
@@ -662,14 +663,14 @@ public final class TailwindUtility {
     public static final class BackgroundImage {
 
         public static final String NONE = "bg-none";
-        public static final String GRADIENT_TO_TOP = "bg-gradient-to-t";
-        public static final String GRADIENT_TO_TOP_RIGHT = "bg-gradient-to-tr";
-        public static final String GRADIENT_TO_RIGHT = "bg-gradient-to-r";
-        public static final String GRADIENT_TO_BOTTOM_RIGHT = "bg-gradient-to-br";
-        public static final String GRADIENT_TO_BOTTOM = "bg-gradient-to-b";
-        public static final String GRADIENT_TO_BOTTOM_LEFT = "bg-gradient-to-bl";
-        public static final String GRADIENT_TO_LEFT = "bg-gradient-to-l";
-        public static final String GRADIENT_TO_TOP_LEFT = "bg-gradient-to-tl";
+        public static final String GRADIENT_TO_TOP = "bg-linear-to-t";
+        public static final String GRADIENT_TO_TOP_RIGHT = "bg-linear-to-tr";
+        public static final String GRADIENT_TO_RIGHT = "bg-linear-to-r";
+        public static final String GRADIENT_TO_BOTTOM_RIGHT = "bg-linear-to-br";
+        public static final String GRADIENT_TO_BOTTOM = "bg-linear-to-b";
+        public static final String GRADIENT_TO_BOTTOM_LEFT = "bg-linear-to-bl";
+        public static final String GRADIENT_TO_LEFT = "bg-linear-to-l";
+        public static final String GRADIENT_TO_TOP_LEFT = "bg-linear-to-tl";
 
         private BackgroundImage() {
         }
@@ -961,13 +962,15 @@ public final class TailwindUtility {
     public static final class BorderRadius {
 
         public static final String NONE = "rounded-none";
+        public static final String XSMALL = "rounded-xs";
         public static final String SMALL = "rounded-sm";
-        public static final String MEDIUM = "rounded";
-        public static final String LARGE = "rounded-md";
-        public static final String XLARGE = "rounded-lg";
-        public static final String XXLARGE = "rounded-xl";
-        public static final String XXXLARGE = "rounded-2xl";
-        public static final String XXXXLARGE = "rounded-3xl";
+        public static final String DEFAULT = "rounded";
+        public static final String MEDIUM = "rounded-md";
+        public static final String LARGE = "rounded-lg";
+        public static final String XLARGE = "rounded-xl";
+        public static final String XXLARGE = "rounded-2xl";
+        public static final String XXXLARGE = "rounded-3xl";
+        public static final String XXXXLARGE = "rounded-4xl";
         public static final String FULL = "rounded-full";
 
         private BorderRadius() {
@@ -1039,8 +1042,10 @@ public final class TailwindUtility {
     public static final class BoxShadow {
 
         public static final String NONE = "shadow-none";
-        public static final String XSMALL = "shadow-sm";
-        public static final String SMALL = "shadow";
+        public static final String XXSMALL = "shadow-2xs";
+        public static final String XSMALL = "shadow-xs";
+        public static final String SMALL = "shadow-sm";
+        public static final String DEFAULT = "shadow";
         public static final String MEDIUM = "shadow-md";
         public static final String LARGE = "shadow-lg";
         public static final String XLARGE = "shadow-xl";
@@ -1369,6 +1374,7 @@ public final class TailwindUtility {
         /** Blur filter classes ({@code blur-*}). */
         public static final class Blur {
             public static final String NONE = "blur-none";
+            public static final String XSMALL = "blur-xs";
             public static final String SMALL = "blur-sm";
             public static final String DEFAULT = "blur";
             public static final String MEDIUM = "blur-md";
@@ -2627,7 +2633,9 @@ public final class TailwindUtility {
     public static final class Outline {
 
         public static final String NONE = "outline-none";
+        public static final String HIDDEN = "outline-hidden";
         public static final String DEFAULT = "outline";
+        public static final String SOLID = "outline-solid";
         public static final String DASHED = "outline-dashed";
         public static final String DOTTED = "outline-dotted";
         public static final String DOUBLE = "outline-double";

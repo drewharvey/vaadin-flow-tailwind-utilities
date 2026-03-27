@@ -127,13 +127,15 @@ class TailwindUtilityTest {
     @Test
     void borderRadius_constants_mapToCorrectClasses() {
         assertEquals("rounded-none", TailwindUtility.BorderRadius.NONE);
+        assertEquals("rounded-xs", TailwindUtility.BorderRadius.XSMALL);
         assertEquals("rounded-sm", TailwindUtility.BorderRadius.SMALL);
-        assertEquals("rounded", TailwindUtility.BorderRadius.MEDIUM);
-        assertEquals("rounded-md", TailwindUtility.BorderRadius.LARGE);
-        assertEquals("rounded-lg", TailwindUtility.BorderRadius.XLARGE);
-        assertEquals("rounded-xl", TailwindUtility.BorderRadius.XXLARGE);
-        assertEquals("rounded-2xl", TailwindUtility.BorderRadius.XXXLARGE);
-        assertEquals("rounded-3xl", TailwindUtility.BorderRadius.XXXXLARGE);
+        assertEquals("rounded", TailwindUtility.BorderRadius.DEFAULT);
+        assertEquals("rounded-md", TailwindUtility.BorderRadius.MEDIUM);
+        assertEquals("rounded-lg", TailwindUtility.BorderRadius.LARGE);
+        assertEquals("rounded-xl", TailwindUtility.BorderRadius.XLARGE);
+        assertEquals("rounded-2xl", TailwindUtility.BorderRadius.XXLARGE);
+        assertEquals("rounded-3xl", TailwindUtility.BorderRadius.XXXLARGE);
+        assertEquals("rounded-4xl", TailwindUtility.BorderRadius.XXXXLARGE);
         assertEquals("rounded-full", TailwindUtility.BorderRadius.FULL);
     }
 
@@ -144,8 +146,10 @@ class TailwindUtilityTest {
     @Test
     void boxShadow_constants_mapToCorrectClasses() {
         assertEquals("shadow-none", TailwindUtility.BoxShadow.NONE);
-        assertEquals("shadow-sm", TailwindUtility.BoxShadow.XSMALL);
-        assertEquals("shadow", TailwindUtility.BoxShadow.SMALL);
+        assertEquals("shadow-2xs", TailwindUtility.BoxShadow.XXSMALL);
+        assertEquals("shadow-xs", TailwindUtility.BoxShadow.XSMALL);
+        assertEquals("shadow-sm", TailwindUtility.BoxShadow.SMALL);
+        assertEquals("shadow", TailwindUtility.BoxShadow.DEFAULT);
         assertEquals("shadow-md", TailwindUtility.BoxShadow.MEDIUM);
         assertEquals("shadow-lg", TailwindUtility.BoxShadow.LARGE);
         assertEquals("shadow-xl", TailwindUtility.BoxShadow.XLARGE);
@@ -620,6 +624,7 @@ class TailwindUtilityTest {
     @Test
     void backdropFilter_constants_mapToCorrectClasses() {
         assertEquals("backdrop-blur-none", TailwindUtility.BackdropFilter.NONE);
+        assertEquals("backdrop-blur-xs", TailwindUtility.BackdropFilter.BLUR_XSMALL);
         assertEquals("backdrop-blur-sm", TailwindUtility.BackdropFilter.BLUR_SMALL);
         assertEquals("backdrop-blur", TailwindUtility.BackdropFilter.BLUR);
         assertEquals("backdrop-blur-3xl", TailwindUtility.BackdropFilter.BLUR_XXXLARGE);
@@ -654,10 +659,10 @@ class TailwindUtilityTest {
     @Test
     void backgroundImage_constants_mapToCorrectClasses() {
         assertEquals("bg-none", TailwindUtility.BackgroundImage.NONE);
-        assertEquals("bg-gradient-to-t", TailwindUtility.BackgroundImage.GRADIENT_TO_TOP);
-        assertEquals("bg-gradient-to-r", TailwindUtility.BackgroundImage.GRADIENT_TO_RIGHT);
-        assertEquals("bg-gradient-to-b", TailwindUtility.BackgroundImage.GRADIENT_TO_BOTTOM);
-        assertEquals("bg-gradient-to-tl", TailwindUtility.BackgroundImage.GRADIENT_TO_TOP_LEFT);
+        assertEquals("bg-linear-to-t", TailwindUtility.BackgroundImage.GRADIENT_TO_TOP);
+        assertEquals("bg-linear-to-r", TailwindUtility.BackgroundImage.GRADIENT_TO_RIGHT);
+        assertEquals("bg-linear-to-b", TailwindUtility.BackgroundImage.GRADIENT_TO_BOTTOM);
+        assertEquals("bg-linear-to-tl", TailwindUtility.BackgroundImage.GRADIENT_TO_TOP_LEFT);
     }
 
     @Test
@@ -786,6 +791,7 @@ class TailwindUtilityTest {
     @Test
     void filter_blur_constants_mapToCorrectClasses() {
         assertEquals("blur-none", TailwindUtility.Filter.Blur.NONE);
+        assertEquals("blur-xs", TailwindUtility.Filter.Blur.XSMALL);
         assertEquals("blur-sm", TailwindUtility.Filter.Blur.SMALL);
         assertEquals("blur", TailwindUtility.Filter.Blur.DEFAULT);
         assertEquals("blur-3xl", TailwindUtility.Filter.Blur.XXXLARGE);
@@ -1073,7 +1079,9 @@ class TailwindUtilityTest {
     @Test
     void outline_constants_mapToCorrectClasses() {
         assertEquals("outline-none", TailwindUtility.Outline.NONE);
+        assertEquals("outline-hidden", TailwindUtility.Outline.HIDDEN);
         assertEquals("outline", TailwindUtility.Outline.DEFAULT);
+        assertEquals("outline-solid", TailwindUtility.Outline.SOLID);
         assertEquals("outline-dashed", TailwindUtility.Outline.DASHED);
         assertEquals("outline-dotted", TailwindUtility.Outline.DOTTED);
         assertEquals("outline-double", TailwindUtility.Outline.DOUBLE);
