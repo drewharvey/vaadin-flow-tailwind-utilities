@@ -12,7 +12,7 @@ compatible with Vaadin 25.
 | Java version | 17 | 21+ |
 | Vaadin compatibility | 24+ | 25+ |
 | Tailwind CSS version | v3 | v4 |
-| Feature flag key | `com.vaadin.experimental.tailwindCss` | TBD — verify if key changed or flag is no longer needed |
+| Feature flag key | `com.vaadin.experimental.tailwindCss` | No change — flag is still required in Vaadin 25 |
 | README requirements | Java 17+, Vaadin 24+ | Java 21+, Vaadin 25+ |
 
 ---
@@ -41,31 +41,19 @@ require changes. However, you may optionally adopt Java 21 language features
 
 ---
 
-## 2. Verify/Update the Tailwind Feature Flag (Required — Verify)
+## 2. Tailwind Feature Flag (No Change Required)
 
-In Vaadin 24, Tailwind CSS support was enabled via an experimental feature flag:
+The Tailwind CSS feature flag is **still required** in Vaadin 25. The existing
+`src/main/resources/vaadin-featureflags.properties` file must remain as-is:
 
 ```properties
 # src/main/resources/vaadin-featureflags.properties
 com.vaadin.experimental.tailwindCss=true
 ```
 
-In **Vaadin 25, Tailwind CSS is a first-class, production-ready feature** — it
-is no longer experimental. This means the property key and/or the mechanism for
-enabling it may have changed.
-
-**Actions needed:**
-
-1. Confirm with the [Vaadin 25 feature flags documentation](https://vaadin.com/docs/latest/flow/configuration/feature-flags)
-   whether `com.vaadin.experimental.tailwindCss` is still the correct key, or
-   whether it has been promoted to a stable config property (or is now enabled
-   by default).
-2. Update (or remove) `src/main/resources/vaadin-featureflags.properties` accordingly.
-3. Update the README's note about the auto-enabled feature flag.
-
-If the flag is no longer needed (because Tailwind support is on by default), this
-file can be removed — which actually simplifies the library, since one of its
-original value propositions was automating the flag setup.
+No changes are needed to this file or to the README's note about the
+auto-enabled feature flag — the library continues to deliver the same
+zero-configuration value proposition for Vaadin 25 users.
 
 ---
 
@@ -132,7 +120,7 @@ Update `README.md` to reflect the new requirements:
 - Change "Java 17+" → "Java 21+"
 - Change "Vaadin 24+" → "Vaadin 25+"
 - Update the Tailwind CSS version reference from v3 to v4
-- Update the feature flag note (depending on outcome of item 2 above)
+- The feature flag note in the README remains accurate — no change needed
 
 ---
 
@@ -176,8 +164,7 @@ version that clearly signals Vaadin 25 / Tailwind v4 compatibility. Consider:
 ## Checklist
 
 - [ ] Upgrade `pom.xml` Java source/target from 17 to 21
-- [ ] Verify the correct Vaadin 25 feature flag key for Tailwind CSS and update
-      `vaadin-featureflags.properties` (or remove it if no longer needed)
+- [x] Confirm feature flag `com.vaadin.experimental.tailwindCss=true` is still required — **no change needed to `vaadin-featureflags.properties`**
 - [ ] Audit all `TailwindUtility` constant values for Tailwind v3→v4 renames
       (shadow, blur, and any other renamed utilities)
 - [ ] Add constants for new Tailwind v4 utilities (e.g., `size-*`)
