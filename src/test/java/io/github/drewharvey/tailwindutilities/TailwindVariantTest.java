@@ -1,4 +1,4 @@
-package dev.tailwindutility;
+package io.github.drewharvey.tailwindutilities;
 
 import org.junit.jupiter.api.Test;
 

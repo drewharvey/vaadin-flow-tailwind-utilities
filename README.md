@@ -43,7 +43,7 @@ Add the dependency to your project's `pom.xml`:
 
 ```xml
 <dependency>
-    <groupId>dev.tailwindutility</groupId>
+    <groupId>io.github.drewharvey</groupId>
     <artifactId>vaadin-flow-tailwind-utilities</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
@@ -61,7 +61,7 @@ Add the dependency to your project's `pom.xml`:
 Import `TailwindUtility` and reference the nested constant classes:
 
 ```java
-import dev.tailwindutility.TailwindUtility;
+import io.github.drewharvey.tailwindutilities.TailwindUtility;
 
 // Typography
 var title = new H1("Hello");

@@ -1,4 +1,4 @@
-package dev.tailwindutility;
+package io.github.drewharvey.tailwindutilities;
 
 /**
  * Contains constants for all standard Tailwind CSS utility classes, structured

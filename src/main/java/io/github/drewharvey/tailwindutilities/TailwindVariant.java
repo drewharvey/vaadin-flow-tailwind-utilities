@@ -1,4 +1,4 @@
-package dev.tailwindutility;
+package io.github.drewharvey.tailwindutilities;
 
 /**
  * Provides type-safe factory methods for composing Tailwind CSS variant-prefixed
